@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="/panel/assets/va-favicon.svg" rel="icon" type="image/svg+xml">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+    <title>Venue Wise</title>
+    <link rel="stylesheet" crossorigin href="/web/main.css">
+</head>
+
+<body>
+    <div id="snackbar"></div>
+    <div>
+        <nav class="layout__nav"></nav>
+        <main class="layout__main">
+            <aside class="layout__aside"></aside>
+            <section class="layout__section">
+                <div class="layout__content">
+                    <main>
+                        <div class="inquiry-list__title">
+                            <div class="inquiry-list__title-inner">
+                                <h3 class="inquiry-list__title-heading">Inquiry list</h3>
+                                <span class="inquiry-list__title-description">
+                                    Choose your property and checked the
+                                    inquiries
+                                </span>
+                            </div>
+                        </div>
+                        <div class="inquiry-list__tabs">
+                            <div class="inquiry-list__header">
+                                <div class="inquiry-list__tab-list">
+                                    <!--
+                                    <div class="inquiry-list__tab-line"></div>
+                                    <li>
+                                    <button class="inquiry-list__tab"> Atlantis The Royal </button>
+                                    </li>
+                                    <li>
+                                    <button class="inquiry-list__tab"> Atlantis The Palm </button>
+                                    </li>
+                                    -->
+                                    <div class="inquiry-list__select-venue">
+                                        <select class="inquiry-list__select-venue-select" id="propertySelect">
+                                            <option selected>Select a venue</option>
+                                            <option value="Atlantis The Royal">Atlantis The Royal</option>
+                                            <option value="Atlantis The Palm">Atlantis The Palm</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="inquiry-list__filters">
+                                    <div>
+                                        <select class="inquiry-list__select-filter" id="statusSelect">
+                                            <option value="">Select status</option>
+                                            <option value="new">New</option>
+                                            <option value="accepted">Accepted</option>
+                                            <option value="responded">Responded</option>
+                                            <option value="pending">Pending</option>
+                                            <option value="closed">Closed</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <select class="inquiry-list__select-filter" id="sortSelect">
+                                            <option value="">Sort by</option>
+                                            <option value="new-date">New Date</option>
+                                            <option value="last-date">Last Date</option>
+                                            <option value="budget:l-h">Budget: L - H</option>
+                                            <option value="budget:h-l">Budget: H - L</option>
+                                            <option value="attendees:l-h">Attendees: L - H</option>
+                                            <option value="attendees:h-l">Attendees: H - L</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="inquiry-list__panels">
+                                <div class="inquiry-list__content">
+                                    <div class="loading-spinner inquiry-list__loading" id="loadingSpinner"></div>
+                                    <div class="inquiry-list__error-message" id="errorMessage"></div>
+                                    <div class="inquiry-list__grid" id="inquiryGrid">
+                                        <div class="inquiry-card">
+                                            <div class="inquiry-card__header">
+                                                <div class="inquiry-card__meta">
+                                                    <p class="inquiry-card__id" onclick="copyToClipboard('INQ-001')">
+                                                        Inquiry ID:
+                                                        <span>INQ-001</span>
+                                                    </p>
+                                                    <span class="inquiry-card__divider"></span>
+                                                    <p>
+                                                        Inquiry Date:
+                                                        <span>March 20, 2024</span>
+                                                    </p>
+                                                </div>
+                                                <span class="inquiry__tag inquiry__tag--blue">New</span>
+                                            </div>
+                                            <div class="inquiry-card__title">
+                                                <h6>Corporate Event</h6>
+                                            </div>
+                                            <div class="inquiry-card__content">
+                                                <div class="inquiry-card__image-wrapper">
+                                                    <img class="inquiry-card__image"
+                                                        src="/panel/assets/images/venue/4/cover.jpg">
+                                                    <p class="inquiry-card__venue-count">
+                                                        <span>3</span>
+                                                        venues
+                                                    </p>
+                                                </div>
+                                                <div class="inquiry-card__details">
+                                                    <div class="inquiry-card__detail-row">
+                                                        <p>Event Date:</p>
+                                                        <span class="inquiry-card__detail-value">April 15, 2024</span>
+                                                    </div>
+                                                    <div class="inquiry-card__detail-row">
+                                                        <p>Event Type:</p>
+                                                        <span class="inquiry-card__detail-value">Conference</span>
+                                                    </div>
+                                                    <div class="inquiry-card__detail-row">
+                                                        <p>Number attendees:</p>
+                                                        <span class="inquiry-card__detail-value">150 people</span>
+                                                    </div>
+                                                    <div class="inquiry-card__detail-row">
+                                                        <p>Budget:</p>
+                                                        <span class="inquiry-card__detail-value">$ 25,000</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="inquiry-card__footer">
+                                                <a class="inquiry-card__show-detail" href="./inquiry.html">
+                                                    Show detail
+                                                    <svg fill="none" height="24" viewbox="0 0 24 24" width="24"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M15.3766 12L9.37656 18L7.97656 16.6L12.5766 12L7.97656 7.4L9.37656 6L15.3766 12Z"
+                                                            fill="#647800"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="inquiry-card">
+                                            <div class="inquiry-card__header">
+                                                <div class="inquiry-card__meta">
+                                                    <p class="inquiry-card__id" onclick="copyToClipboard('INQ-002')">
+                                                        Inquiry ID:
+                                                        <span>INQ-002</span>
+                                                    </p>
+                                                    <span class="inquiry-card__divider"></span>
+                                                    <p>
+                                                        Inquiry Date:
+                                                        <span>March 19, 2024</span>
+                                                    </p>
+                                                </div>
+                                                <span class="inquiry__tag inquiry__tag--blue">Pending</span>
+                                            </div>
+                                            <div class="inquiry-card__title">
+                                                <h6>Wedding Reception</h6>
+                                            </div>
+                                            <div class="inquiry-card__content">
+                                                <div class="inquiry-card__image-wrapper">
+                                                    <img class="inquiry-card__image"
+                                                        src="/panel/assets/images/venue/4/cover.jpg">
+                                                    <p class="inquiry-card__venue-count">
+                                                        <span>2</span>
+                                                        venues
+                                                    </p>
+                                                </div>
+                                                <div class="inquiry-card__details">
+                                                    <div class="inquiry-card__detail-row">
+                                                        <p>Event Date:</p>
+                                                        <span class="inquiry-card__detail-value">May 20, 2024</span>
+                                                    </div>
+                                                    <div class="inquiry-card__detail-row">
+                                                        <p>Event Type:</p>
+                                                        <span class="inquiry-card__detail-value">Wedding</span>
+                                                    </div>
+                                                    <div class="inquiry-card__detail-row">
+                                                        <p>Number attendees:</p>
+                                                        <span class="inquiry-card__detail-value">200 people</span>
+                                                    </div>
+                                                    <div class="inquiry-card__detail-row">
+                                                        <p>Budget:</p>
+                                                        <span class="inquiry-card__detail-value">$ 35,000</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="inquiry-card__footer">
+                                                <a class="inquiry-card__show-detail" href="./inquiry.html">
+                                                    Show detail
+                                                    <svg fill="none" height="24" viewbox="0 0 24 24" width="24"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M15.3766 12L9.37656 18L7.97656 16.6L12.5766 12L7.97656 7.4L9.37656 6L15.3766 12Z"
+                                                            fill="#647800"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="inquiry-list__pagination-wrapper" id="pagination">
+                            <div class="pagination">
+                                <!-- Main Pagination Section -->
+                                <div class="pagination__container">
+                                    <div class="pagination__button-group">
+                                        <!-- First Page -->
+                                        <div class="pagination__button-wrapper">
+                                            <button class="pagination__button pagination__button--active">1</button>
+                                        </div>
+                                        <!-- Middle Pages -->
+                                        <div class="pagination__button-wrapper">
+                                            <button class="pagination__button">2</button>
+                                        </div>
+                                        <div class="pagination__button-wrapper">
+                                            <button class="pagination__button">3</button>
+                                        </div>
+                                        <div class="pagination__button-wrapper">
+                                            <button class="pagination__button">4</button>
+                                        </div>
+                                        <div class="pagination__button-wrapper">
+                                            <button class="pagination__button">5</button>
+                                        </div>
+                                        <!-- Ellipsis -->
+                                        <div class="pagination__button-wrapper">
+                                            <span class="pagination__ellipsis"></span>
+                                        </div>
+                                        <!-- Last Page -->
+                                        <div class="pagination__button-wrapper">
+                                            <button class="pagination__button">10</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="pagination__info">Showing 1-10 of 100</p>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/scripts/app.js"></script>
+    <script>
+        function showSnackbar(message) {
+            const snackbar = document.getElementById('snackbar');
+            snackbar.textContent = message;
+            snackbar.classList.add('show');
+            setTimeout(() => snackbar.classList.remove('show'), 3000);
+        }
+
+        // Copy to clipboard function
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                showSnackbar(`Inquiry ID: ${text} copied to clipboard`);
+            });
+        }
+    </script>
+</body>
+
+</html>

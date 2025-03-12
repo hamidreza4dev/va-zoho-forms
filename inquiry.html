@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="/assets/va-favicon.svg" rel="icon" type="image/svg+xml">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+    <title>Venue Wise</title>
+    <link rel="stylesheet" crossorigin href="/web/main.css">
+</head>
+
+<body>
+    <div class="dialog" id="commission-missing-modal">
+        <div class="dialog__container inquiry-commission-modal__container">
+            <div class="dialog__bilbilak"></div>
+            <div class="dialog__x"></div>
+            <div class="inquiry-commission-modal__content">
+                <div class="inquiry-commission-modal__header">
+                    <h4 class="inquiry-commission-modal__title">Upload Proposal</h4>
+                    <p class="inquiry-commission-modal__subtitle">
+                        Decline Inquiry:
+                        <span class="inquiry-commission-modal__highlight">LIVEINDAINSHOW</span>
+                    </p>
+                </div>
+                <div class="inquiry-commission-modal__warning">
+                    <h5 class="inquiry-commission-modal__warning-title">You can't submit Proposal</h5>
+                    <p class="inquiry-commission-modal__warning-text">
+                        You haven't specified the commission contract
+                        between your property and us yet.
+                    </p>
+                    <a class="inquiry-commission-modal__warning-button" href="#">Set Commission</a>
+                </div>
+                <button class="inquiry-commission-modal__button">Submit Proposal</button>
+            </div>
+        </div>
+    </div>
+    <div class="dialog" id="submmission-success-modal">
+        <div class="dialog__container inquiry-submission-success-modal__container">
+            <div class="dialog__bilbilak"></div>
+            <div class="dialog__x"></div>
+            <div class="inquiry-submission-success-modal__content">
+                <div class="inquiry-submission-success-modal__header">
+                    <h4 class="inquiry-submission-success-modal__title">
+                        Submission
+                        <span class="inquiry-submission-success-modal__title-highlight">Received!</span>
+                    </h4>
+                    <p class="inquiry-submission-success-modal__description">
+                        Thank you for submitting your venue verification request. Our team is
+                        reviewing your
+                        details, and you can expect a response within
+                        <span class="inquiry-submission-success-modal__description-highlight">3
+                            business
+                            days.</span>
+                    </p>
+                </div>
+                <hr class="inquiry-submission-success-modal__divider">
+                <h6 class="inquiry-submission-success-modal__manager-title">Your dedicated account
+                    manager</h6>
+                <div class="inquiry-submission-success-modal__manager-container">
+                    <div class="inquiry-submission-success-modal__manager-info">
+                        <img class="inquiry-submission-success-modal__manager-avatar"
+                            src="/assets/images/avatar/venue-adviser.png">
+                        <div>
+                            <h6 class="inquiry-submission-success-modal__manager-details-name">Kate
+                                Asumbra</h6>
+                            <p class="inquiry-submission-success-modal__manager-details-role">Venue
+                                Wise Advisors</p>
+                        </div>
+                    </div>
+                    <div class="inquiry-submission-success-modal__manager-actions">
+                        <a class="inquiry-submission-success-modal__manager-action" href="#">
+                            <svg fill="none" height="18" viewbox="0 0 18 18" width="18"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path clip-rule="evenodd"
+                                    d="M1.56 8.93298C1.56 4.83799 4.8975 1.50049 8.99249 1.50049C10.98 1.50049 12.8475 2.27299 14.25 3.68299C15.6525 5.08548 16.425 6.95299 16.425 8.94048C16.425 13.0355 13.0875 16.373 8.99249 16.373C7.74749 16.373 6.525 16.058 5.4375 15.4655L1.5 16.5005L2.55 12.6455C1.905 11.5205 1.56 10.2455 1.56 8.93298ZM5.5275 5.67049C5.7 5.48299 5.9025 5.43799 6.0225 5.43799C6.08934 5.43799 6.15412 5.44005 6.21576 5.44201C6.2717 5.44379 6.32504 5.44549 6.375 5.44549C6.38885 5.44635 6.4031 5.44652 6.41771 5.44669C6.52963 5.448 6.66231 5.44954 6.795 5.76799C6.86215 5.92468 6.96884 6.18362 7.07264 6.43554C7.21228 6.77446 7.34668 7.10066 7.3725 7.14799C7.4175 7.23799 7.4475 7.34299 7.3875 7.47049C7.37708 7.49131 7.36757 7.51101 7.35846 7.52989C7.31505 7.6198 7.28058 7.69121 7.2 7.77799C7.125 7.89049 7.005 8.02549 6.9225 8.10799C6.8325 8.19049 6.75 8.30299 6.84 8.48299C6.9525 8.67049 7.32 9.27799 7.875 9.77298C8.4624 10.2979 8.9769 10.5208 9.245 10.637C9.29867 10.6602 9.34247 10.6792 9.375 10.6955C9.555 10.7855 9.66 10.7705 9.7725 10.643C9.8775 10.523 10.2375 10.103 10.3575 9.91548C10.5 9.73549 10.605 9.76548 10.7775 9.82548C10.9425 9.88548 11.8575 10.3355 12.045 10.4405C12.0676 10.4505 12.0893 10.4599 12.11 10.4689C12.2605 10.5343 12.3588 10.577 12.405 10.643C12.45 10.7255 12.45 11.093 12.2925 11.528C12.135 11.963 11.4 12.3605 11.04 12.413C10.7175 12.458 10.3125 12.4805 9.87 12.338C9.6 12.2555 9.255 12.143 8.8125 11.9405C7.11742 11.2189 5.95991 9.6075 5.68211 9.22076C5.65385 9.18142 5.63469 9.15476 5.625 9.14299C5.61783 9.13191 5.60625 9.11517 5.59107 9.09324C5.43155 8.86272 4.875 8.05849 4.875 7.22299C4.875 6.38656 5.28913 5.93241 5.48319 5.7196C5.49968 5.70151 5.51458 5.68517 5.5275 5.67049Z"
+                                    fill="#464646" fill-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                        <a class="inquiry-submission-success-modal__manager-action" href="#">
+                            <svg fill="none" height="18" viewbox="0 0 18 18" width="18"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3 15C2.5875 15 2.23438 14.8531 1.94063 14.5594C1.64688 14.2656 1.5 13.9125 1.5 13.5V4.5C1.5 4.0875 1.64688 3.73438 1.94063 3.44063C2.23438 3.14688 2.5875 3 3 3H15C15.4125 3 15.7656 3.14688 16.0594 3.44063C16.3531 3.73438 16.5 4.0875 16.5 4.5V13.5C16.5 13.9125 16.3531 14.2656 16.0594 14.5594C15.7656 14.8531 15.4125 15 15 15H3ZM9 9.75L15 6V4.5L9 8.25L3 4.5V6L9 9.75Z"
+                                    fill="#464646"></path>
+                            </svg>
+                        </a>
+                        <a class="inquiry-submission-success-modal__manager-action" href="#">
+                            <svg fill="none" height="18" viewbox="0 0 18 18" width="18"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12.75 15.7502C11.5097 15.7491 10.2887 15.4426 9.195 14.8577L8.8575 14.6702C6.52556 13.4164 4.61377 11.5046 3.36 9.17272L3.1725 8.83522C2.57237 7.73527 2.25535 6.50323 2.25 5.2502V4.7477C2.24969 4.34792 2.40897 3.96455 2.6925 3.6827L3.96 2.4152C4.0831 2.29115 4.25686 2.23136 4.43022 2.2534C4.60358 2.27543 4.75686 2.3768 4.845 2.5277L6.5325 5.4227C6.70315 5.71737 6.65387 6.09002 6.4125 6.3302L4.995 7.74772C4.87728 7.86412 4.84985 8.04397 4.9275 8.19022L5.19 8.68522C6.13278 10.4315 7.56698 11.8631 9.315 12.8027L9.81 13.0727C9.95625 13.1503 10.1361 13.1229 10.2525 13.0052L11.67 11.5877C11.9102 11.3464 12.2828 11.2971 12.5775 11.4677L15.4725 13.1552C15.6234 13.2433 15.7248 13.3966 15.7468 13.57C15.7688 13.7434 15.7091 13.9171 15.585 14.0402L14.3175 15.3077C14.0357 15.5912 13.6523 15.7505 13.2525 15.7502H12.75Z"
+                                    fill="#464646"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <button class="inquiry-submission-success-modal__submit-button js-dialog-close">Got
+                    it</button>
+            </div>
+        </div>
+    </div>
+    <div class="dialog" id="decline-modal">
+        <div class="dialog__container inquiry-decline-modal__container">
+            <div class="dialog__bilbilak"></div>
+            <div class="dialog__x"></div>
+            <div class="inquiry-decline-modal__content">
+                <div class="inquiry-decline-modal__header">
+                    <h4 class="inquiry-decline-modal__title">Decline</h4>
+                    <p class="inquiry-decline-modal__subtitle">
+                        Upload Proposal for:
+                        <span class="inquiry-decline-modal__highlight">LIVEINDAINSHOW</span>
+                    </p>
+                </div>
+                <div class="inquiry-decline-modal__commission">
+                    <div class="inquiry-decline-modal__commission-banner">
+                        <p class="inquiry-decline-modal__commission-value">15%</p>
+                        <p class="inquiry-decline-modal__commission-text">
+                            Master agreement will
+                            happy on this
+                            inquiry
+                        </p>
+                    </div>
+                </div>
+                <form class="inquiry-decline-modal__form">
+                    <h6 class="inquiry-decline-modal__form-title">Reason of decline</h6>
+                    <div class="inquiry-decline-modal__options">
+                        <div class="inquiry-decline-modal__radio" tabindex="1">
+                            <input id="decline-checkbox-budget-mismatch" name="decline-reason" type="radio"
+                                value="budget-mismatch">
+                            <label for="decline-checkbox-budget-mismatch">Budget Mismatch</label>
+                        </div>
+                        <div class="inquiry-decline-modal__radio" tabindex="1">
+                            <input id="decline-checkbox-no-availability-date" name="decline-reason" type="radio"
+                                value="no-availability-date">
+                            <label for="decline-checkbox-no-availability-date">No Availability
+                                Date</label>
+                        </div>
+                        <div class="inquiry-decline-modal__radio" tabindex="1">
+                            <input id="decline-checkbox-venue-temporarily-closed" name="decline-reason" type="radio"
+                                value="venue-temporarily-closed">
+                            <label for="decline-checkbox-venue-temporarily-closed">Venue Temporarily
+                                Closed</label>
+                        </div>
+                    </div>
+                    <span class="input--error__msg"></span>
+                    <div class="inquiry-decline-modal__field">
+                        <label class="inquiry-decline-modal__field-label" for="decline-describe">Describe</label>
+                        <textarea class="inquiry-decline-modal__field-textarea" id="decline-describe" name="describe"
+                            placeholder="Write note" type="text"></textarea>
+                        <span class="input--error__msg"></span>
+                    </div>
+                    <div class="inquiry-decline-modal__upload">
+                        <label class="inquiry-decline-modal__upload-label">Upload a proposal, image
+                            or file (optional)</label>
+                        <div>
+                            <input type="file">
+                        </div>
+                    </div>
+                    <div class="inquiry-decline-modal__actions">
+                        <button
+                            class="inquiry-decline-modal__button inquiry-decline-modal__button--cancel js-dialog-close">Cancel</button>
+                        <button
+                            class="inquiry-decline-modal__button inquiry-decline-modal__button--submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="dialog" id="upload-proposal-modal">
+        <div class="dialog__container inquiry-upload-proposal-modal__container">
+            <div class="dialog__bilbilak"></div>
+            <div class="dialog__x"></div>
+            <div class="inquiry-upload-proposal-modal__content">
+                <div class="inquiry-upload-proposal-modal__header">
+                    <h4 class="inquiry-upload-proposal-modal__title">
+                        Upload
+                        <span class="inquiry-upload-proposal-modal__title-highlight">Proposal</span>
+                    </h4>
+                    <p class="inquiry-upload-proposal-modal__subtitle">
+                        Upload Proposal for:
+                        <span class="inquiry-upload-proposal-modal__subtitle-highlight">LIVEINDAINSHOW</span>
+                    </p>
+                </div>
+                <div class="inquiry-upload-proposal-modal__commission">
+                    <div class="inquiry-upload-proposal-modal__commission-banner">
+                        <p class="inquiry-upload-proposal-modal__commission-value">15%</p>
+                        <p class="inquiry-upload-proposal-modal__commission-text">
+                            Master agreement
+                            will happy on
+                            this inquiry
+                        </p>
+                    </div>
+                </div>
+                <form class="inquiry-upload-proposal-modal__form">
+                    <div class="inquiry-upload-proposal-modal__field">
+                        <label class="inquiry-upload-proposal-modal__field-label"
+                            for="decline-describe">Describe</label>
+                        <textarea class="inquiry-upload-proposal-modal__field-textarea" id="decline-describe"
+                            name="describe" placeholder="Write note" type="text"></textarea>
+                        <span class="input--error__msg"></span>
+                    </div>
+                    <div class="inquiry-upload-proposal-modal__upload">
+                        <label class="inquiry-upload-proposal-modal__upload-label">Upload a
+                            proposal, image or file (optional)</label>
+                        <div>
+                            <input type="file">
+                        </div>
+                    </div>
+                    <div class="inquiry-upload-proposal-modal__actions">
+                        <button
+                            class="inquiry-upload-proposal-modal__button inquiry-upload-proposal-modal__button--cancel js-dialog-close">Cancel</button>
+                        <button
+                            class="inquiry-upload-proposal-modal__button inquiry-upload-proposal-modal__button--submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="snackbar"></div>
+    <div>
+        <nav class="layout__nav"></nav>
+        <main class="layout__main" id="root">
+            <aside class="layout__aside"></aside>
+            <section class="layout__section">
+                <div class="layout__content">
+                    <main>
+                        <div class="inquiry__breadcrumbs">
+                            <a href="#">Inquiries List</a>
+                            <a href="#">Atlantis The Royal: Corporate Gala Dinner</a>
+                        </div>
+                        <h1 class="inquiry__title">
+                            Inquiry: LIVEINDAINSHOW
+                            <br class="mobile-only">
+                            <span class="inquiry__title-highlight">(Atlantis The
+                                Royal)</span>
+                        </h1>
+                        <section class="inquiry__grid">
+                            <div class="inquiry__content">
+                                <div class="inquiry__header">
+                                    <div class="inquiry__info">
+                                        <div class="inquiry__meta">
+                                            <div class="inquiry__id">
+                                                <svg fill="none" height="21" viewbox="0 0 20 21" width="20"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M7.5 15.5C7.0875 15.5 6.73437 15.3531 6.44062 15.0594C6.14687 14.7656 6 14.4125 6 14V4C6 3.5875 6.14687 3.23438 6.44062 2.94063C6.73437 2.64688 7.0875 2.5 7.5 2.5H15.5C15.9125 2.5 16.2656 2.64688 16.5594 2.94063C16.8531 3.23438 17 3.5875 17 4V14C17 14.4125 16.8531 14.7656 16.5594 15.0594C16.2656 15.3531 15.9125 15.5 15.5 15.5H7.5ZM7.5 14H15.5V4H7.5V14ZM4.5 18.5C4.0875 18.5 3.73437 18.3531 3.44062 18.0594C3.14687 17.7656 3 17.4125 3 17V5.5H4.5V17H14V18.5H4.5Z"
+                                                        fill="#1C1B1F"></path>
+                                                </svg>
+                                                <p onclick="copyToClipboard('INQ-001')">AD800210080021008002</p>
+                                            </div>
+                                            <span class="inquiry__divider"></span>
+                                            <p>Inquiry Date: Feb 12, 2025</p>
+                                        </div>
+                                        <span class="inquiry__divider"></span>
+                                        <p class="inquiry__tag inquiry__tag--blue inquiry__tag-lg desktop-only">New</p>
+                                    </div>
+                                    <div class="inquiry__expires" id="expiresInContainer">
+                                        <p class="inquiry__tag inquiry__tag--blue inquiry__tag-lg mobile-only">New</p>
+                                        <div class="inquiry__timer">
+                                            <div class="inquiry__timer-label">
+                                                <svg fill="none" height="17" viewbox="0 0 16 17" width="16"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M7.99375 12.5016C9.10486 12.5016 10.0493 12.1127 10.8271 11.3349C11.6049 10.5571 11.9937 9.61267 11.9937 8.50156C11.9937 7.39045 11.6049 6.44601 10.8271 5.66823C10.0493 4.89045 9.10486 4.50156 7.99375 4.50156V8.50156L5.16042 11.3349C5.52708 11.6905 5.95208 11.9738 6.43542 12.1849C6.91875 12.396 7.43819 12.5016 7.99375 12.5016ZM7.99842 14.9016C7.11753 14.9016 6.28819 14.7349 5.51042 14.4016C4.73264 14.0682 4.05208 13.6099 3.46875 13.0266C2.88542 12.4432 2.42708 11.7629 2.09375 10.9856C1.76042 10.2082 1.59375 9.37767 1.59375 8.4939C1.59375 7.61012 1.76042 6.78212 2.09375 6.0099C2.42708 5.23767 2.88542 4.5599 3.46875 3.97656C4.05208 3.39323 4.73242 2.9349 5.50975 2.60156C6.28708 2.26823 7.11764 2.10156 8.00142 2.10156C8.88519 2.10156 9.71319 2.26823 10.4854 2.60156C11.2576 2.9349 11.9354 3.39323 12.5187 3.97656C13.1021 4.5599 13.5604 5.2389 13.8937 6.01356C14.2271 6.78834 14.3937 7.61612 14.3937 8.4969C14.3937 9.37778 14.2271 10.2071 13.8937 10.9849C13.5604 11.7627 13.1021 12.4432 12.5187 13.0266C11.9354 13.6099 11.2564 14.0682 10.4817 14.4016C9.70697 14.7349 8.87919 14.9016 7.99842 14.9016ZM7.99375 13.7016C9.43819 13.7016 10.666 13.196 11.6771 12.1849C12.6882 11.1738 13.1937 9.94601 13.1937 8.50156C13.1937 7.05712 12.6882 5.82934 11.6771 4.81823C10.666 3.80712 9.43819 3.30156 7.99375 3.30156C6.54931 3.30156 5.32153 3.80712 4.31042 4.81823C3.29931 5.82934 2.79375 7.05712 2.79375 8.50156C2.79375 9.94601 3.29931 11.1738 4.31042 12.1849C5.32153 13.196 6.54931 13.7016 7.99375 13.7016Z"
+                                                        fill="#1C1B1F"></path>
+                                                </svg>
+                                                <p>Expires in</p>
+                                            </div>
+                                            <div class="inquiry__timer-display">
+                                                <div class="inquiry__timer-digit">
+                                                    <p id="timer-days">00</p>
+                                                </div>
+                                                <span>:</span>
+                                                <div class="inquiry__timer-digit">
+                                                    <p id="timer-hours">00</p>
+                                                </div>
+                                                <span>:</span>
+                                                <div class="inquiry__timer-digit">
+                                                    <p id="timer-minutes">00</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="inquiry__tabs">
+                                    <div class="inquiry__tab-container">
+                                        <div class="inquiry__tab-wrapper">
+                                            <div class="inquiry__tab-border"></div>
+                                            <ul class="inquiry__tab-list" id="tabsList">
+                                                <li>
+                                                    <button class="inquiry__tab-trigger inquiry__tab-trigger--active"
+                                                        data-tab="inquiry-details">Inquiry
+                                                        details</button>
+                                                </li>
+                                                <li>
+                                                    <button class="inquiry__tab-trigger"
+                                                        data-tab="facilities-production-details">
+                                                        Facilities & Production
+                                                        details
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button class="inquiry__tab-trigger" data-tab="food-beverage">Food &
+                                                        beverage</button>
+                                                </li>
+                                                <li>
+                                                    <button class="inquiry__tab-trigger" data-tab="event-time">Event
+                                                        time</button>
+                                                </li>
+                                                <li>
+                                                    <button class="inquiry__tab-trigger"
+                                                        data-tab="contact">Contact</button>
+                                                </li>
+                                                <li>
+                                                    <button class="inquiry__tab-trigger"
+                                                        data-tab="venues">Venues</button>
+                                                </li>
+                                            </ul>
+                                            <div class="inquiry__tab-nav">
+                                                <button class="inquiry__tab-button" id="scrollLeft">
+                                                    <svg fill="none" height="20" viewbox="0 0 20 20" width="20"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.1888 10L12.1888 15L13.3555 13.8333L9.52214 10L13.3555 6.16667L12.1888 5L7.1888 10Z"
+                                                            fill="#6B6B6B"></path>
+                                                    </svg>
+                                                </button>
+                                                <button class="inquiry__tab-button" id="scrollRight">
+                                                    <svg fill="none" height="20" viewbox="0 0 20 20" width="20"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M12.8112 10L7.8112 15L6.64453 13.8333L10.4779 10L6.64453 6.16667L7.8112 5L12.8112 10Z"
+                                                            fill="#6B6B6B"></path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="inquiry__tab-content accordion">
+                                        <div class="inquiry__tab-panel" data-tab="inquiry-details">
+                                            <div class="accordion__item">
+                                                <div class="inquiry__details-section">
+                                                    <h6 class="inquiry__details-title">Event Details:</h6>
+                                                    <div class="inquiry__details-list">
+                                                        <p class="inquiry__details-item">
+                                                            <span class="inquiry__details-item-label">Event type</span>
+                                                            : Concerts and Music Performances
+                                                        </p>
+                                                        <p class="inquiry__details-item">
+                                                            <span class="inquiry__details-item-label">Event Name</span>
+                                                            : LIVEINDAINSHOW
+                                                        </p>
+                                                        <p class="inquiry__details-item">
+                                                            <span class="inquiry__details-item-label">
+                                                                Number
+                                                                attendees
+                                                            </span>
+                                                            : 1,000-1,200 people
+                                                        </p>
+                                                        <p class="inquiry__details-item">
+                                                            <span class="inquiry__details-item-label">Setup</span>
+                                                            : Theater or Auditorium
+                                                        </p>
+                                                        <p class="inquiry__details-item">
+                                                            <span class="inquiry__details-item-label">
+                                                                Nationality of
+                                                                attendees
+                                                            </span>
+                                                            : Indian
+                                                        </p>
+                                                        <div class="accordion__content">
+                                                            <p class="inquiry__details-item">
+                                                                <span class="inquiry__details-item-label">
+                                                                    Number
+                                                                    attendees
+                                                                </span>
+                                                                : 1,000-1,200 people
+                                                            </p>
+                                                            <p class="inquiry__details-item">
+                                                                <span class="inquiry__details-item-label">Setup</span>
+                                                                : Theater or Auditorium
+                                                            </p>
+                                                            <p class="inquiry__details-item">
+                                                                <span class="inquiry__details-item-label">
+                                                                    Nationality of
+                                                                    attendees
+                                                                </span>
+                                                                : Indian
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button
+                                                    class="inquiry-submission-success-modal__manager-details-more accordion__header">
+                                                    <span>More detail</span>
+                                                    <svg fill="none" height="24" viewbox="0 0 24 24" width="24"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M12 15.3749L6 9.37485L7.4 7.97485L12 12.5749L16.6 7.97485L18 9.37485L12 15.3749Z"
+                                                            fill="#181A1B"></path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="inquiry__tab-panel" data-tab="facilities-production-details"
+                                            style="display: none;">
+                                            <div class="accordion__item">
+                                                <div class="inquiry__details-section">
+                                                    <h6 class="inquiry__details-title">Facilities & Production Details:
+                                                    </h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="inquiry__tab-panel" data-tab="food-beverage" style="display: none;">
+                                            <div class="accordion__item">
+                                                <div class="inquiry__details-section">
+                                                    <h6 class="inquiry__details-title">Food & Beverage Requirements:
+                                                    </h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="inquiry__tab-panel" data-tab="event-time" style="display: none;">
+                                            <div class="accordion__item">
+                                                <div class="inquiry__details-section">
+                                                    <h6 class="inquiry__details-title">Event Timing:</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="inquiry__tab-panel" data-tab="contact" style="display: none;">
+                                            <div class="accordion__item">
+                                                <div class="inquiry__details-section">
+                                                    <h6 class="inquiry__details-title">Contact Information:</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="inquiry__tab-panel" data-tab="venues" style="display: none;">
+                                            <div class="accordion__item">
+                                                <div class="inquiry__details-section">
+                                                    <h6 class="inquiry__details-title">Venue Options:</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="inquiry__venues accordion">
+                                    <div class="accordion__item accordion__item--active">
+                                        <div class="inquiry__venues-header accordion__header">
+                                            <h6 class="inquiry__venues-title">Inquiry venues</h6>
+                                            <svg fill="none" height="24" viewbox="0 0 24 24" width="24"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M12 8.62515L6 14.6251L7.4 16.0251L12 11.4251L16.6 16.0251L18 14.6251L12 8.62515Z"
+                                                    fill="#181A1B"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="accordion__content">
+                                            <div class="inquiry__venues-grid">
+                                                <div class="inquiry__venues-item">
+                                                    <img class="inquiry__venues-item-image"
+                                                        src="/assets/images/venue/4/cover.jpg">
+                                                    <p class="inquiry__venues-item-name">Baniyas Event Space</p>
+                                                </div>
+                                                <div class="inquiry__venues-item">
+                                                    <img class="inquiry__venues-item-image"
+                                                        src="/assets/images/venue/4/cover.jpg">
+                                                    <p class="inquiry__venues-item-name">Baniyas Event Space</p>
+                                                </div>
+                                                <div class="inquiry__venues-item">
+                                                    <img class="inquiry__venues-item-image"
+                                                        src="/assets/images/venue/4/cover.jpg">
+                                                    <p class="inquiry__venues-item-name">Baniyas Event Space</p>
+                                                </div>
+                                                <div class="inquiry__venues-item">
+                                                    <img class="inquiry__venues-item-image"
+                                                        src="/assets/images/venue/4/cover.jpg">
+                                                    <p class="inquiry__venues-item-name">Baniyas Event Space</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="inquiry__timeline">
+                                    <h4 class="inquiry__timeline-title">Inquiry Timeline &amp; Conversations</h4>
+                                    <!-- Timeline empty -->
+                                    <div class="inquiry-empty-state">
+                                        <div class="inquiry-empty-state__icon-container"></div>
+                                        <p class="inquiry-empty-state__text">
+                                            You don't have Inquiry Timeline &amp;
+                                            Conversations
+                                        </p>
+                                    </div>
+                                    <!-- Timeline -->
+                                    <div class="inquiry__timeline-header">
+                                        <p>Participant Role: Booker / Venue Owner</p>
+                                        <p>Exchange Date &amp; Time</p>
+                                    </div>
+                                    <div class="inquiry__timeline-list">
+                                        <div class="inquiry__timeline-item">
+                                            <div class="inquiry__timeline-item-header">
+                                                <div class="inquiry__timeline-item-user">
+                                                    <div
+                                                        class="inquiry__timeline-item-avatar inquiry__timeline-item-avatar--user">
+                                                        <p>K</p>
+                                                    </div>
+                                                    <div>
+                                                        <h6 class="inquiry__timeline-item-name">Kaveh Kazemee</h6>
+                                                        <p class="inquiry__timeline-item-text">Kaveh.kazemee@gmail.com
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <p class="inquiry__timeline-item-date">Feb 12, 2025 - 20:33</p>
+                                            </div>
+                                            <hr class="border-[#EBEBEB]">
+                                            <div class="inquiry__timeline-item-content">
+                                                <p class="inquiry__timeline-item-text">
+                                                    <span>
+                                                        Hi! I have come across your listing for the property and I am
+                                                        interested in learning more about it.
+                                                    </span>
+                                                    <span class="inquiry__timeline-item-additional-text"
+                                                        style="display: none;">
+                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                        Accusantium minus distinctio, voluptas nesciunt accusamus
+                                                        delectus atque
+                                                        optio id ullam veritatis corporis quasi esse, ducimus explicabo
+                                                        blanditiis quo
+                                                        placeat totam fugit?
+                                                    </span>
+                                                    <span class="inquiry__timeline-item-expand">Show more</span>
+                                                </p>
+                                                <h6 class="inquiry__timeline-item-attachments">Attachments</h6>
+                                                <div class="inquiry__timeline-item-files">
+                                                    <a class="inquiry__timeline-item-file" href="#">
+                                                        <div class="inquiry__timeline-item-file-icon">
+                                                            <img src="/assets/vectors/file-icons/file-docx.svg">
+                                                        </div>
+                                                        <div>
+                                                            <p class="inquiry__timeline-item-file-info">
+                                                                Proposal for:
+                                                                LIVEINDAINSHOW.docx
+                                                            </p>
+                                                            <p class="inquiry__timeline-item-file-size">3 MB</p>
+                                                        </div>
+                                                    </a>
+                                                    <a class="inquiry__timeline-item-file" href="#">
+                                                        <div class="inquiry__timeline-item-file-icon">
+                                                            <img src="/assets/vectors/file-icons/file-docx.svg">
+                                                        </div>
+                                                        <div>
+                                                            <p class="inquiry__timeline-item-file-info">
+                                                                Proposal for:
+                                                                LIVEINDAINSHOW.docx
+                                                            </p>
+                                                            <p class="inquiry__timeline-item-file-size">3 MB</p>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="inquiry__timeline-item">
+                                            <div class="inquiry__timeline-item-header">
+                                                <div class="inquiry__timeline-item-user">
+                                                    <div
+                                                        class="inquiry__timeline-item-avatar inquiry__timeline-item-avatar--owner">
+                                                        <p>K</p>
+                                                    </div>
+                                                    <div>
+                                                        <h6 class="inquiry__timeline-item-name">Venue owner</h6>
+                                                        <p class="inquiry__timeline-item-text">Venue's manager</p>
+                                                    </div>
+                                                </div>
+                                                <p class="inquiry__timeline-item-date">Feb 12, 2025 - 20:33</p>
+                                            </div>
+                                            <hr class="border-[#EBEBEB]">
+                                            <div class="inquiry__timeline-item-content">
+                                                <p class="inquiry__timeline-item-text">
+                                                    <span>
+                                                        Hi! I have come across your listing for the property and I am
+                                                        interested in learning more about it.
+                                                    </span>
+                                                    <span class="inquiry__timeline-item-additional-text"
+                                                        style="display: none;">
+                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                        Accusantium minus distinctio, voluptas nesciunt accusamus
+                                                        delectus atque
+                                                        optio id ullam veritatis corporis quasi esse, ducimus explicabo
+                                                        blanditiis quo
+                                                        placeat totam fugit?
+                                                    </span>
+                                                    <span class="inquiry__timeline-item-expand">Show more</span>
+                                                </p>
+                                                <h6 class="inquiry__timeline-item-attachments">Attachments</h6>
+                                                <div class="inquiry__timeline-item-files">
+                                                    <a class="inquiry__timeline-item-file" href="#">
+                                                        <div class="inquiry__timeline-item-file-icon">
+                                                            <img src="/assets/vectors/file-icons/file-docx.svg">
+                                                        </div>
+                                                        <div>
+                                                            <p class="inquiry__timeline-item-file-info">
+                                                                Proposal for:
+                                                                LIVEINDAINSHOW.docx
+                                                            </p>
+                                                            <p class="inquiry__timeline-item-file-size">3 MB</p>
+                                                        </div>
+                                                    </a>
+                                                    <a class="inquiry__timeline-item-file" href="#">
+                                                        <div class="inquiry__timeline-item-file-icon">
+                                                            <img src="/assets/vectors/file-icons/file-docx.svg">
+                                                        </div>
+                                                        <div>
+                                                            <p class="inquiry__timeline-item-file-info">
+                                                                Proposal for:
+                                                                LIVEINDAINSHOW.docx
+                                                            </p>
+                                                            <p class="inquiry__timeline-item-file-size">3 MB</p>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="inquiry__sidebar">
+                                <div class="inquiry__sidebar-content">
+                                    <p class="inquiry__sidebar-subtitle">Atlantis The Royal Inquiry</p>
+                                    <h2 class="inquiry__sidebar-title">LIVEINDAINSHOW</h2>
+                                    <div class="inquiry__sidebar-meta">
+                                        <div class="inquiry__sidebar-item">
+                                            <p>Event Date:</p>
+                                            <span class="inquiry__sidebar-item-value">Mar 12 ,2025 - Nov 12 ,2026</span>
+                                        </div>
+                                        <div class="inquiry__sidebar-item">
+                                            <p>Event Type:</p>
+                                            <span class="inquiry__sidebar-item-value">Concerts and Music
+                                                Performance</span>
+                                        </div>
+                                        <div class="inquiry__sidebar-item">
+                                            <p>Number attendees:</p>
+                                            <span class="inquiry__sidebar-item-value">1200 people</span>
+                                        </div>
+                                        <div class="inquiry__sidebar-item">
+                                            <p>Budget:</p>
+                                            <span class="inquiry__sidebar-item-value">$ 350,000 DDR</span>
+                                        </div>
+                                    </div>
+                                    <p class="inquiry__sidebar-note">
+                                        Respond to the next inquiry within 24 hours to
+                                        maintain your response rate.
+                                    </p>
+                                    <div class="inquiry__sidebar-actions">
+                                        <button class="inquiry__sidebar-button--primary" id="accept-inquiry">Accept
+                                            inquiry</button>
+                                        <button class="inquiry__sidebar-button--secondary" id="decline-inquiry">Decline
+                                            inquiry</button>
+                                    </div>
+                                    <div class="inquiry__sidebar-pro">
+                                        <div class="inquiry__sidebar-pro-header">
+                                            <span class="inquiry__sidebar-pro-badge">Pro</span>
+                                            <h2 class="inquiry__sidebar-pro-title">Client Information</h2>
+                                        </div>
+                                        <div class="inquiry__sidebar-pro-info">
+                                            <div>
+                                                <p class="inquiry__sidebar-pro-field">Full name</p>
+                                                <p class="inquiry__sidebar-pro-value">Soli Firoozranjbar</p>
+                                            </div>
+                                            <div>
+                                                <p class="inquiry__sidebar-pro-field">Email</p>
+                                                <p class="inquiry__sidebar-pro-value">s.firoozranjbar@gmail.com</p>
+                                            </div>
+                                            <div>
+                                                <p class="inquiry__sidebar-pro-field">Mobile</p>
+                                                <p class="inquiry__sidebar-pro-value">+971 50 7710503</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr class="inquiry__sidebar-divider">
+                                    <div>
+                                        <h3 class="inquiry__sidebar-upgrade-title">Upgrade plane for full inquiry</h3>
+                                        <div class="inquiry__sidebar-upgrade-info">
+                                            <span class="inquiry__sidebar-upgrade-badge">Pro</span>
+                                            <p class="inquiry__sidebar-upgrade-text">
+                                                Upgrade to Pro to see lead details and
+                                                <br class="desktop-only">
+                                                pay 0 percentage of commission
+                                            </p>
+                                        </div>
+                                        <button class="inquiry__sidebar-upgrade-button">Upgrade</button>
+                                    </div>
+                                    <hr class="inquiry__sidebar-divider">
+                                    <div>
+                                        <h3 class="inquiry__sidebar-manager-title">Your dedicated account manager</h3>
+                                        <div class="inquiry__sidebar-manager-info">
+                                            <div class="inquiry__sidebar-manager-profile">
+                                                <img class="inquiry__sidebar-manager-avatar"
+                                                    src="/assets/images/avatar/venue-adviser.png">
+                                                <div>
+                                                    <h6 class="inquiry__sidebar-manager-name">Kate Asumbra</h6>
+                                                    <p class="inquiry__sidebar-manager-role">Venue Wise Advisors</p>
+                                                </div>
+                                            </div>
+                                            <div class="inquiry__sidebar-manager-actions">
+                                                <a class="inquiry__sidebar-manager-link" href="#">
+                                                    <div class="inquiry__sidebar-manager-icon">
+                                                        <svg fill="none" height="18" viewbox="0 0 18 18" width="18"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path clip-rule="evenodd"
+                                                                d="M1.56 8.93298C1.56 4.83799 4.8975 1.50049 8.99249 1.50049C10.98 1.50049 12.8475 2.27299 14.25 3.68299C15.6525 5.08548 16.425 6.95299 16.425 8.94048C16.425 13.0355 13.0875 16.373 8.99249 16.373C7.74749 16.373 6.525 16.058 5.4375 15.4655L1.5 16.5005L2.55 12.6455C1.905 11.5205 1.56 10.2455 1.56 8.93298ZM5.5275 5.67049C5.7 5.48299 5.9025 5.43799 6.0225 5.43799C6.08934 5.43799 6.15412 5.44005 6.21576 5.44201C6.2717 5.44379 6.32504 5.44549 6.375 5.44549C6.38885 5.44635 6.4031 5.44652 6.41771 5.44669C6.52963 5.448 6.66231 5.44954 6.795 5.76799C6.86215 5.92468 6.96884 6.18362 7.07264 6.43554C7.21228 6.77446 7.34668 7.10066 7.3725 7.14799C7.4175 7.23799 7.4475 7.34299 7.3875 7.47049C7.37708 7.49131 7.36757 7.51101 7.35846 7.52989C7.31505 7.6198 7.28058 7.69121 7.2 7.77799C7.125 7.89049 7.005 8.02549 6.9225 8.10799C6.8325 8.19049 6.75 8.30299 6.84 8.48299C6.9525 8.67049 7.32 9.27799 7.875 9.77298C8.4624 10.2979 8.9769 10.5208 9.245 10.637C9.29867 10.6602 9.34247 10.6792 9.375 10.6955C9.555 10.7855 9.66 10.7705 9.7725 10.643C9.8775 10.523 10.2375 10.103 10.3575 9.91548C10.5 9.73549 10.605 9.76548 10.7775 9.82548C10.9425 9.88548 11.8575 10.3355 12.045 10.4405C12.0676 10.4505 12.0893 10.4599 12.11 10.4689C12.2605 10.5343 12.3588 10.577 12.405 10.643C12.45 10.7255 12.45 11.093 12.2925 11.528C12.135 11.963 11.4 12.3605 11.04 12.413C10.7175 12.458 10.3125 12.4805 9.87 12.338C9.6 12.2555 9.255 12.143 8.8125 11.9405C7.11742 11.2189 5.95991 9.6075 5.68211 9.22076C5.65385 9.18142 5.63469 9.15476 5.625 9.14299C5.61783 9.13191 5.60625 9.11517 5.59107 9.09324C5.43155 8.86272 4.875 8.05849 4.875 7.22299C4.875 6.38656 5.28913 5.93241 5.48319 5.7196C5.49968 5.70151 5.51458 5.68517 5.5275 5.67049Z"
+                                                                fill="#464646" fill-rule="evenodd"></path>
+                                                        </svg>
+                                                    </div>
+                                                    Whatsapp
+                                                </a>
+                                                <a class="inquiry__sidebar-manager-link" href="#">
+                                                    <div class="inquiry__sidebar-manager-icon">
+                                                        <svg fill="none" height="18" viewbox="0 0 18 18" width="18"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M3 15C2.5875 15 2.23438 14.8531 1.94063 14.5594C1.64688 14.2656 1.5 13.9125 1.5 13.5V4.5C1.5 4.0875 1.64688 3.73438 1.94063 3.44063C2.23438 3.14688 2.5875 3 3 3H15C15.4125 3 15.7656 3.14688 16.0594 3.44063C16.3531 3.73438 16.5 4.0875 16.5 4.5V13.5C16.5 13.9125 16.3531 14.2656 16.0594 14.5594C15.7656 14.8531 15.4125 15 15 15H3ZM9 9.75L15 6V4.5L9 8.25L3 4.5V6L9 9.75Z"
+                                                                fill="#464646"></path>
+                                                        </svg>
+                                                    </div>
+                                                    Email
+                                                </a>
+                                                <a class="inquiry__sidebar-manager-link" href="#">
+                                                    <div class="inquiry__sidebar-manager-icon">
+                                                        <svg fill="none" height="18" viewbox="0 0 18 18" width="18"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M12.75 15.7502C11.5097 15.7491 10.2887 15.4426 9.195 14.8577L8.8575 14.6702C6.52556 13.4164 4.61377 11.5046 3.36 9.17272L3.1725 8.83522C2.57237 7.73527 2.25535 6.50323 2.25 5.2502V4.7477C2.24969 4.34792 2.40897 3.96455 2.6925 3.6827L3.96 2.4152C4.0831 2.29115 4.25686 2.23136 4.43022 2.2534C4.60358 2.27543 4.75686 2.3768 4.845 2.5277L6.5325 5.4227C6.70315 5.71737 6.65387 6.09002 6.4125 6.3302L4.995 7.74772C4.87728 7.86412 4.84985 8.04397 4.9275 8.19022L5.19 8.68522C6.13278 10.4315 7.56698 11.8631 9.315 12.8027L9.81 13.0727C9.95625 13.1503 10.1361 13.1229 10.2525 13.0052L11.67 11.5877C11.9102 11.3464 12.2828 11.2971 12.5775 11.4677L15.4725 13.1552C15.6234 13.2433 15.7248 13.3966 15.7468 13.57C15.7688 13.7434 15.7091 13.9171 15.585 14.0402L14.3175 15.3077C14.0357 15.5912 13.6523 15.7505 13.2525 15.7502H12.75Z"
+                                                                fill="#464646"></path>
+                                                        </svg>
+                                                    </div>
+                                                    Call
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </main>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/scripts/app.js"></script>
+    <script>
+        function showSnackbar(message) {
+            const snackbar = document.getElementById('snackbar');
+            snackbar.textContent = message;
+            snackbar.classList.add('show');
+            setTimeout(() => snackbar.classList.remove('show'), 3000);
+        }
+
+        // Copy to clipboard function
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                showSnackbar(`Inquiry ID: ${text} copied to clipboard`);
+            });
+        }
+
+        window.addEventListener('load', () => {
+            new window.App.Accordion({
+                wrapper: document.querySelector('.inquiry__tab-content')
+            });
+            new window.App.Accordion({
+                wrapper: document.querySelector('.inquiry__venues')
+            });
+
+            const commissionDialog = new window.App.Dialog({
+                wrapper: document.querySelector('#commission-missing-modal'),
+            });
+
+            const submissionSuccessDialog = new window.App.Dialog({
+                wrapper: document.querySelector('#submmission-success-modal'),
+            });
+
+            const uploadProposalDialog = new window.App.Dialog({
+                wrapper: document.querySelector('#upload-proposal-modal'),
+            });
+
+            const declineModal = new window.App.Dialog({
+                wrapper: document.querySelector('#decline-modal'),
+            });
+
+            document.getElementById('accept-inquiry').addEventListener('click', () => {
+                uploadProposalDialog.open();
+            });
+
+            document.getElementById('decline-inquiry').addEventListener('click', () => {
+                declineModal.open();
+            });
+
+            // Timer functionality
+            function updateTimer() {
+                const now = new Date();
+                const tomorrow = new Date();
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                const diff = tomorrow - now;
+
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+                document.getElementById('timer-days').textContent = String(days).padStart(2, '0');
+                document.getElementById('timer-hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('timer-minutes').textContent = String(minutes).padStart(2, '0');
+            }
+
+            // Update timer every second
+            setInterval(updateTimer, 1000);
+            // Initial update
+            updateTimer();
+
+            // Tab functionality
+            const tabsList = document.getElementById('tabsList');
+            const tabButtons = tabsList.querySelectorAll('.inquiry__tab-trigger');
+            const tabPanels = document.querySelectorAll('.inquiry__tab-panel');
+            const scrollLeftBtn = document.getElementById('scrollLeft');
+            const scrollRightBtn = document.getElementById('scrollRight');
+
+            // Handle tab switching
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetTab = button.getAttribute('data-tab');
+
+                    // Remove active class from all buttons
+                    tabButtons.forEach(btn => {
+                        btn.classList.remove('inquiry__tab-trigger--active');
+                        btn.classList.add('inquiry__tab-trigger--normal');
+                    });
+
+                    // Add active class to clicked button
+                    button.classList.remove('inquiry__tab-trigger--normal');
+                    button.classList.add('inquiry__tab-trigger--active');
+
+                    // Hide all tab panels
+                    tabPanels.forEach(panel => {
+                        panel.style.display = 'none';
+                    });
+
+                    // Show selected tab panel
+                    const selectedPanel = document.querySelector(`.inquiry__tab-panel[data-tab="${targetTab}"]`);
+                    if (selectedPanel) {
+                        selectedPanel.style.display = 'block';
+                    }
+                });
+            });
+
+            // Handle horizontal scrolling
+            scrollLeftBtn.addEventListener('click', () => {
+                tabsList.scrollBy({
+                    left: tabsList.scrollWidth / -2,
+                    behavior: 'smooth'
+                });
+            });
+
+            scrollRightBtn.addEventListener('click', () => {
+                tabsList.scrollBy({
+                    left: tabsList.scrollWidth / 2,
+                    behavior: 'smooth'
+                });
+            });
+
+            const expandButtons = document.querySelectorAll('.inquiry__timeline-item-expand');
+            expandButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const additionalText = button.parentElement.querySelector('.inquiry__timeline-item-additional-text');
+                    const isHidden = additionalText.style.display === 'none';
+
+                    additionalText.style.display = isHidden ? 'inline' : 'none';
+                    this.textContent = isHidden ? 'Show less' : 'Show more';
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
