@@ -80,6 +80,7 @@ html,
 body {
   margin: 0;
   line-height: inherit;
+  background: #f7f7f7;
 }
 
 hr {
@@ -3352,4 +3353,207 @@ body {
     width: 100%;
     height: 2.875rem;
   }
+}
+
+/**
+ * Single Agreement
+ */
+
+.single-agreement__wrapper {
+  background-color: white;
+  padding: 3.375rem 0;
+}
+
+.single-agreement__container {
+  max-width: 660px;
+  margin: 0 auto;
+}
+
+.single-agreement__header {
+}
+
+.single-agreement__caption {
+  font-family: Neue;
+  color: #6b6b6b;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.single-agreement__title {
+  font-family: Neue Text;
+  font-weight: 700;
+  color: #181a1b;
+  font-size: 1.125rem;
+  line-height: 1.2;
+  margin-top: 0.5rem;
+}
+
+.single-agreement__prose {
+  font-family: Neue Text;
+}
+
+.single-agreement__prose h1,
+.single-agreement__prose h2,
+.single-agreement__prose h3,
+.single-agreement__prose h4,
+.single-agreement__prose h5,
+.single-agreement__prose h6 {
+  font-weight: 700;
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+.single-agreement__prose p,
+.single-agreement__prose li {
+  font-size: 0.875rem;
+  line-height: 1.375;
+  letter-spacing: 0.02em;
+  margin: 0 0 1rem 0;
+}
+
+.single-agreement__prose p:last-child,
+.single-agreement__prose li:last-child {
+  margin: 0;
+}
+
+.single-agreement__prose p:first-child,
+.single-agreement__prose li:first-child {
+  margin-top: 1rem;
+}
+
+.single-agreement__prose ul,
+.single-agreement__prose ol {
+  margin: 0 0 1.5rem 0;
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+.single-agreement__prose ol {
+  list-style: decimal;
+}
+
+.single-agreement__prose ol li::marker {
+  font-weight: 700;
+  margin-right: 0.75rem;
+}
+
+.single-agreement__prose li {
+  margin: 1rem 0;
+}
+
+.single-agreement__prose li:first-child {
+  margin: 0;
+}
+
+.single-agreement__footer {
+  border-radius: 0.5rem;
+  background-color: #181a1b;
+  padding: 4rem;
+}
+
+.single-agreement__footer svg {
+  margin: 0 auto;
+}
+
+.single-agreement__footer-description {
+  font-family: Neue;
+  color: white;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  font-size: 1.125rem;
+  text-align: center;
+  margin-top: 1.75rem;
+}
+
+.single-agreement__footer-cta {
+  display: flex;
+  height: 3rem;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: #c8d200;
+  font-family: Neue;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+  color: rgb(24 26 27 / 1);
+  border-radius: 0.5rem;
+  margin: 1.375rem auto 0 auto;
+  max-width: 23.375rem;
+}
+
+@media (min-width: 1024px) {
+  .single-agreement__footer-cta {
+    height: 3.5rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
+.pdf-thumbnail {
+  width: 200px;
+  border: 1px solid #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+  position: relative;
+  border-radius: 0.5rem;
+}
+
+.pdf-icon {
+  font-size: 16px;
+  font-weight: 900;
+  font-family: Neue;
+  margin-bottom: 10px;
+  background-color: #e5e5e5;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 0.25rem;
+  line-height: 1;
+  margin: 2rem 0;
+  color: white;
+}
+
+.pdf-label-wrapper {
+  width: 100%;
+  background-color: #f5f5f5;
+  border-top: 1px solid #e5e5e5;
+  padding: 0.5rem;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.pdf-label {
+  font-family: Neue;
+  font-size: 14px;
+  color: #333;
+  width: 0;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pdf-label-icon {
+  font-family: Neue;
+  background: #ea4336;
+  width: 20px;
+  min-width: 20px;
+  height: 20px;
+  border-radius: 0.25rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 900;
+  text-align: center;
 }
