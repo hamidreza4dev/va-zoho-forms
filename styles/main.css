@@ -1184,13 +1184,18 @@ body {
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-weight: 600;
+  margin-top: 0.75rem;
+}
+
+.inquiry__details-title:first-child {
+  margin-top: 0;
 }
 
 .inquiry__details-list {
   margin-top: 0.5rem;
 }
 
-.inquiry__details-list .accordion__content {
+.inquiry__details-section .accordion__content {
   margin-top: 0.375rem;
 }
 
