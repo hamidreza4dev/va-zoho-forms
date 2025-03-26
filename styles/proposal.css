@@ -1,0 +1,122 @@
+.proposal__main-container {
+  max-width: 1376px;
+  padding: 0 1rem;
+  margin: auto;
+}
+
+.proposal__container {
+  max-width: 1116px;
+  padding: 0 1rem;
+  margin: auto;
+}
+
+/* Header styles */
+.proposal__header {
+  background-color: black;
+}
+
+.proposal__nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4.875rem;
+}
+
+/* Main content styles */
+.proposal__title {
+  font-family: Neue;
+  font-weight: 300;
+  font-size: 3rem;
+  line-height: 2.5rem;
+  letter-spacing: -0.01em;
+  color: #647800;
+}
+
+.proposal__heading {
+  margin-top: 1.75rem;
+  font-family: Neue;
+  font-weight: 300;
+  font-size: 4.375rem;
+  line-height: 110%;
+}
+
+/* Event details styles */
+.proposal__event-details {
+  margin-top: 2rem;
+}
+
+.proposal__event-info {
+  display: flex;
+  gap: 0.875rem;
+  flex-wrap: wrap;
+}
+
+.proposal__event-label {
+  color: #6b6b6b;
+  font-size: 1rem;
+  font-family: Neue;
+}
+
+.proposal__event-value {
+  font-size: 1.125rem;
+  color: #000;
+}
+
+.proposal__event-separator {
+  color: #b3b2b2;
+}
+
+/* Accordion styles */
+.proposal__accordion-button {
+  margin-top: 1.75rem;
+  border-top: 1px solid #b3b2b2;
+  height: 2.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  font-size: 1.125rem;
+  line-height: 1.25em;
+}
+
+/* Footer styles */
+.proposal__footer {
+  background-color: #181a1b;
+}
+
+.proposal__footer-container {
+  display: flex;
+  justify-content: space-between;
+  height: 5.625rem;
+  align-items: center;
+}
+
+.proposal__footer-text {
+  color: white;
+  font-family: Neue;
+}
+
+.proposal__social-links {
+  display: flex;
+  gap: 0.875rem;
+}
+
+.proposal__social-icons {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.proposal__social-icon {
+  color: #666666;
+  cursor: pointer;
+}
+
+.proposal__social-icon path {
+  transition: color 250ms ease;
+}
+
+.proposal__social-icon:hover {
+  color: #fff;
+}
