@@ -1,3 +1,7 @@
+body {
+  background-color: white;
+}
+
 .proposal__main-container {
   max-width: 1376px;
   padding: 0 1rem;
@@ -8,6 +12,10 @@
   max-width: 1116px;
   padding: 0 1rem;
   margin: auto;
+}
+
+.proposal__overview {
+  margin-top: 3rem;
 }
 
 /* Header styles */
@@ -45,9 +53,13 @@
   margin-top: 2rem;
 }
 
+.proposal__event-details .accordion__content {
+  margin-top: 1rem;
+}
+
 .proposal__event-info {
   display: flex;
-  gap: 0.875rem;
+  gap: 0.25rem 0.875rem;
   flex-wrap: wrap;
 }
 
@@ -119,4 +131,350 @@
 
 .proposal__social-icon:hover {
   color: #fff;
+}
+
+/* Venues section styles */
+.proposal__venues {
+  padding: 3.125rem 0;
+  background-color: #f7f7f7;
+}
+
+.proposal__venues-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+  margin-top: 5.5rem;
+}
+
+.proposal__venues-title {
+  font-family: Neue;
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 0.8125em;
+  letter-spacing: -0.01em;
+  color: #647800;
+}
+
+.proposal__venues-badge {
+  background-color: #e5cb00;
+  padding: 0.125rem 0.5rem;
+  border-radius: 44px;
+  font-family: Neue;
+  font-size: 0.875rem;
+  line-height: 1.2857em;
+  text-align: center;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.proposal__venues-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.proposal__venue-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.07);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.proposal__venue-image {
+  margin-top: auto;
+  width: 100%;
+  height: 17.5rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.proposal__venue-image img {
+  width: 100%;
+  height: 0;
+  flex: 1;
+  object-fit: cover;
+}
+
+.proposal__venue-header {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.proposal__venue-title {
+  font-family: Neue;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.34em;
+  letter-spacing: -0.01em;
+  color: #212324;
+}
+
+.proposal__venue-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.proposal__venue-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.proposal__venue-status-text {
+  font-family: Neue;
+  font-size: 1rem;
+  line-height: 1.125em;
+}
+
+.proposal__venue-timer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  background-color: #b2ff8c;
+  padding: 0.375rem 1rem;
+}
+
+.proposal__venue-timer-icon {
+  color: #000000;
+  display: flex;
+  align-items: center;
+}
+
+.proposal__venue-timer-text {
+  font-family: Neue;
+  font-size: 0.8125rem;
+  line-height: 1.358em;
+  color: #000000;
+}
+
+.proposal__venue-timer-digits {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.proposal__venue-timer-digits span {
+  font-size: 0.9375rem;
+  line-height: 1.34em;
+  color: #000000;
+}
+
+.proposal__venue-timer-box {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-family: Neue;
+  font-size: 0.875rem;
+  line-height: 1.34em;
+  min-width: 2rem;
+  text-align: center;
+}
+
+.proposal__venue-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.proposal__venue-btn {
+  font-family: Neue;
+  font-size: 1.125rem;
+  line-height: 1.111em;
+  letter-spacing: 0.00556em;
+  padding: 0.625rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.proposal__venue-btn--view {
+  border: 1px solid #000000;
+  background-color: transparent;
+  color: #000000;
+  flex: 1;
+}
+
+.proposal__venue-btn--accept,
+.proposal__venue-btn--reject {
+  border: 1px solid #b3b2b2;
+  background-color: transparent;
+  color: #000000;
+  flex: 0.5;
+}
+
+.proposal__venue-btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+  border-color: #000000;
+}
+
+/* Advisor section styles */
+.proposal__advisor {
+  padding: 3rem 0;
+}
+
+.proposal__advisor-title {
+  font-family: Neue;
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 0.8125em;
+  letter-spacing: -0.01em;
+  color: #647800;
+  margin-bottom: 1rem;
+}
+
+.proposal__advisor-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  box-shadow: 0px 1px 4px rgba(24, 26, 32, 0.07);
+}
+
+.proposal__advisor-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.proposal__advisor-avatar {
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
+  border: 1px solid #6b6b6b;
+  object-fit: cover;
+}
+
+.proposal__advisor-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.proposal__advisor-name {
+  font-family: Neue;
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1.2em;
+  color: #fff;
+}
+
+.proposal__advisor-role {
+  font-family: Neue;
+  font-size: 1.125rem;
+  line-height: 1.2em;
+  color: #999999;
+}
+
+.proposal__advisor-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.proposal__advisor-btn {
+  font-family: Neue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.25em;
+  letter-spacing: 0.00625em;
+  padding: 0.625rem 2rem;
+  height: 3.5rem;
+  border-radius: 4px;
+  border: 1px solid #ffffff;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+.proposal__advisor-btn--whatsapp {
+}
+
+.proposal__advisor-btn--call {
+}
+
+.proposal__advisor-btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/**
+ * Timer
+ */
+.proposal__venue__expires {
+  margin-top: 1.25rem;
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .proposal__venue__expires {
+    margin-top: 0px;
+  }
+}
+
+.proposal__venue__timer {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.proposal__venue__timer-label {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: Neue;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  color: rgb(24 26 27 / 1);
+}
+
+.proposal__venue__timer-display {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  font-family: Neue;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  color: rgb(24 26 27 / 1);
+}
+
+.proposal__venue__timer-digit {
+  display: flex;
+  height: 1.5rem;
+  width: 1.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+  background-color: rgb(0 0 0 / 1);
+  color: rgb(255 255 255 / 1);
 }
