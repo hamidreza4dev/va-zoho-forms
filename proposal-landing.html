@@ -269,20 +269,6 @@
 
     <script src="/scripts/app.js"></script>
     <script>
-        function showSnackbar(message) {
-            const snackbar = document.getElementById('snackbar');
-            snackbar.textContent = message;
-            snackbar.classList.add('show');
-            setTimeout(() => snackbar.classList.remove('show'), 3000);
-        }
-
-        // Copy to clipboard function
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                showSnackbar(`Inquiry ID: ${text} copied to clipboard`);
-            });
-        }
-
         // Timer functionality
         function updateTimer(wrapper) {
             const now = new Date();
@@ -299,7 +285,7 @@
             wrapper.querySelector('#timer-minutes').textContent = String(minutes).padStart(2, '0');
         }
 
-        document.querySelectorAll('.inquiry__timer').forEach(element => {
+        document.querySelectorAll('.proposal__venue-card #expiresInContainer').forEach(element => {
             // Update timer every second
             setInterval(() => updateTimer(element), 1000);
             // Initial update
