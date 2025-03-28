@@ -6,8 +6,11 @@
     <link href="/assets/va-favicon.svg" rel="icon" type="image/svg+xml">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
     <title>Venue Wise</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" crossorigin href="/styles/main.css">
     <link rel="stylesheet" crossorigin href="/styles/proposal.css">
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmkGZ_bmBlqv3njsS1bddxnzzxy8LW99k"></script>
 </head>
 
 <body>
@@ -21,168 +24,164 @@
             </nav>
         </section>
 
-        <section class="proposal__container accordion proposal__overview">
-            <p class="proposal__title">Your Original Inquiry</p>
-            <h1 class="proposal__heading">Business workshop
+        <div class="proposal__sections">
+            <div class="proposal__main-container">
+                <div class="proposal__sections-inner">
+                    <a href="#" class="proposal__section proposal__section-active">Cover</a>
+                    <a href="#" class="proposal__section">Package inclusions</a>
+                    <a href="#" class="proposal__section">Overview</a>
+                    <a href="#" class="proposal__section">Location</a>
+                    <a href="#" class="proposal__section">Video</a>
+                    <a href="#" class="proposal__section">Virtual tour</a>
+                    <a href="#" class="proposal__section">Attached files from venue</a>
+                    <a href="#" class="proposal__section">Guest room</a>
+                    <a href="#" class="proposal__section">Facilities</a>
+                    <a href="#" class="proposal__section">Your venue advisor</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="proposal__head-swiper">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./assets/images/venue/1/cover.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./assets/images/venue/2/cover.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./assets/images/venue/4/cover.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="proposal__head-swiper-actions">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+
+            <div class="proposal__head-swiper-info">
+                <div class="swiper-pagination-fraction"></div>
+            </div>
+        </div>
+
+        <section class="proposal__container accordion proposal-detail__overview">
+            <div class="proposal-detail__user">
+                <div class="proposal-detail__user-avatar">
+                    <img src="./assets/images/avatar/venue-adviser.png" alt="">
+                </div>
+                <div class="proposal-detail__user-info">
+                    <h6 class="proposal-detail__user-title">Kate Asumbra</h6>
+                    <p class="proposal-detail__user-role">Venue Wise Advisors</p>
+                </div>
+            </div>
+
+            <p class="proposal-detail__short-description">from Venue Wise invited you to review the proposals.</p>
+
+            <h1 class="proposal-detail__heading">Business workshop
                 Feb 2025
             </h1>
-
-            <div class="accordion__item proposal__event-details">
-                <div class="proposal__event-info">
-                    <p class="proposal__event-label">Event Type:
-                        <span class="proposal__event-value">Concerts and Music Performance</span>
-                    </p>
-                    <span class="proposal__event-separator">|</span>
-                    <p class="proposal__event-label">Event Date:
-                        <span class="proposal__event-value">Mar 12 ,2025 - Nov 12 ,2026 </span>
-                    </p>
-                    <span class="proposal__event-separator">|</span>
-                    <p class="proposal__event-label">Number attendees:
-                        <span class="proposal__event-value">1200 people</span>
-                    </p>
-                    <span class="proposal__event-separator">|</span>
-                    <p class="proposal__event-label">Budget:
-                        <span class="proposal__event-value">$ 350,000 DDR</span>
-                    </p>
-                </div>
-                <div class="accordion__content">
-                    <div class="proposal__event-info">
-                        <p class="proposal__event-label">Event Type:
-                            <span class="proposal__event-value">Concerts and Music Performance</span>
-                        </p>
-                        <span class="proposal__event-separator">|</span>
-                        <p class="proposal__event-label">Event Date:
-                            <span class="proposal__event-value">Mar 12 ,2025 - Nov 12 ,2026 </span>
-                        </p>
-                        <span class="proposal__event-separator">|</span>
-                        <p class="proposal__event-label">Number attendees:
-                            <span class="proposal__event-value">1200 people</span>
-                        </p>
-                        <span class="proposal__event-separator">|</span>
-                        <p class="proposal__event-label">Budget:
-                            <span class="proposal__event-value">$ 350,000 DDR</span>
-                        </p>
-                    </div>
-                </div>
-                <button class="accordion__header proposal__accordion-button">
-                    More Details
-                    <svg fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 15.3749L6 9.37485L7.4 7.97485L12 12.5749L16.6 7.97485L18 9.37485L12 15.3749Z"
-                            fill="#181A1B"></path>
-                    </svg>
-                </button>
-            </div>
         </section>
 
-        <section></section>
+        <section class="proposal__container proposal-detail__overview">
+            <h2 class="proposal-detail__overview-title">Package inclusions</h2>
 
-        <div></div>
-
-        <section class="proposal__venues">
-            <div class="proposal__container">
-                <div class="proposal__venues-header">
-                    <h2 class="proposal__venues-title">New Proposal</h2>
-                    <div class="proposal__venues-badge">2 venues suggested</div>
+            <div class="proposal-detail__overview-info accordion__item">
+                <div class="proposal-detail__overview-info-item">
+                    <p class="proposal-detail__overview-info-item-title">Venue price:</p>
+                    <p class="proposal-detail__overview-info-item-detail">$ 350,000 Per Day</p>
                 </div>
-                <div class="proposal__venues-grid">
-                    <!-- Venue Card 1 -->
-                    <div class="proposal__venue-card">
-                        <div class="proposal__venue-header">
-                            <div class="proposal__venue-info">
-                                <p class="proposal__venue-location">Marina, Dubai, Am | Hotel</p>
-                                <div class="proposal__venue-rating">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"
-                                            fill="currentColor" />
-                                    </svg>
-                                    <span>5</span>
-                                </div>
-                            </div>
-                            <h3 class="proposal__venue-title">Royal Ballroom at One&Only Royal Mirage - Dubai</h3>
-                        </div>
-                        <div class="proposal__venue-content">
-                            <div class="proposal__venue-status">
-                                <span class="proposal__venue-status-text">Available</span>
-                                <div class="proposal__venue__expires">
-                                    <div class="proposal__venue__timer">
-                                        <div class="proposal__venue__timer-label">
-                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2ZM12 20C7.6 20 4 16.4 4 12C4 7.6 7.6 4 12 4C16.4 4 20 7.6 20 12C20 16.4 16.4 20 12 20ZM15.1 7.9L11 12L15.1 16.1L16.5 14.7L13.8 12L16.5 9.3L15.1 7.9ZM8.9 7.9L7.5 9.3L10.2 12L7.5 14.7L8.9 16.1L13 12L8.9 7.9Z"
-                                                    fill="currentColor" />
-                                            </svg>
-                                            Expires in
-                                        </div>
-                                        <div class="proposal__venue__timer-display">
-                                            <span class="proposal__venue__timer-digit" id="timer-days">05</span>
-                                            <span>:</span>
-                                            <span class="proposal__venue__timer-digit" id="timer-hours">45</span>
-                                            <span>:</span>
-                                            <span class="proposal__venue__timer-digit" id="timer-minutes">05</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="proposal__venue-actions">
-                                <button class="proposal__venue-btn proposal__venue-btn--view">View Proposal</button>
-                                <button class="proposal__venue-btn proposal__venue-btn--accept">Accept</button>
-                                <button class="proposal__venue-btn proposal__venue-btn--reject">Reject</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Venue Card 2 -->
-                    <div class="proposal__venue-card">
-                        <div class="proposal__venue-header">
-                            <div class="proposal__venue-info">
-                                <p class="proposal__venue-location">Marina, Dubai, Am | Restaurant</p>
-                                <div class="proposal__venue-rating">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"
-                                            fill="currentColor" />
-                                    </svg>
-                                    <span>5</span>
-                                </div>
-                            </div>
-                            <h3 class="proposal__venue-title">Amelia Restaurant & Lounge Dubai</h3>
-                        </div>
-                        <div class="proposal__venue-content">
-                            <div class="proposal__venue-status">
-                                <span class="proposal__venue-status-text">Available</span>
-                                <div class="proposal__venue__expires">
-                                    <div class="proposal__venue__timer">
-                                        <div class="proposal__venue__timer-label">
-                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2ZM12 20C7.6 20 4 16.4 4 12C4 7.6 7.6 4 12 4C16.4 4 20 7.6 20 12C20 16.4 16.4 20 12 20ZM15.1 7.9L11 12L15.1 16.1L16.5 14.7L13.8 12L16.5 9.3L15.1 7.9ZM8.9 7.9L7.5 9.3L10.2 12L7.5 14.7L8.9 16.1L13 12L8.9 7.9Z"
-                                                    fill="currentColor" />
-                                            </svg>
-                                            Expires in
-                                        </div>
-                                        <div class="proposal__venue__timer-display">
-                                            <span class="proposal__venue__timer-digit" id="timer-days">05</span>
-                                            <span>:</span>
-                                            <span class="proposal__venue__timer-digit" id="timer-hours">45</span>
-                                            <span>:</span>
-                                            <span class="proposal__venue__timer-digit" id="timer-minutes">05</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="proposal__venue-actions">
-                                <button class="proposal__venue-btn proposal__venue-btn--view">View Proposal</button>
-                                <button class="proposal__venue-btn proposal__venue-btn--accept">Accept</button>
-                                <button class="proposal__venue-btn proposal__venue-btn--reject">Reject</button>
-                            </div>
-                        </div>
+                <div class="proposal-detail__overview-info-item">
+                    <p class="proposal-detail__overview-info-item-title">Food & Beverage price:</p>
+                    <p class="proposal-detail__overview-info-item-detail">AED 220.00 Per Day</p>
+                </div>
+                <ul class="proposal-detail__overview-info-list">
+                    <li>Per hour Canapé Service</li>
+                    <li>VenueWise has suggested two venues for you. Please click on each venue to view its details.</li>
+                    <li>Cocktail tables</li>
+                    <li>Banquet oval tables (maximum 8 people per table)</li>
+                    <li>Banqueting chairs with chair covers</li>
+                    <li>In built screen & projector</li>
+                    <li>In built lights & sound system</li>
+                </ul>
+
+                <div class="accordion__content">
+                    <div class="proposal-detail__overview-info-item">
+                        <p class="proposal-detail__overview-info-item-title">Some extra content</p>
+                        <p class="proposal-detail__overview-info-item-detail">Sample content</p>
                     </div>
                 </div>
+
+                <button class="proposal-detail__overview-expand accordion__header">
+                    <span class="accordion-expanded">Show less</span>
+                    <span class="accordion-not-expanded">Show more</span>
+                </button>
             </div>
+
+            <hr>
+        </section>
+
+        <section class="proposal__container proposal-detail__overview">
+            <h2 class="proposal-detail__overview-title">Overview</h2>
+
+            <div class="proposal-detail__overview-info accordion__item">
+                <div class="proposal-detail__overview-info-item">
+                    <p class="proposal-detail__overview-info-item-title">Venue type:</p>
+                    <p class="proposal-detail__overview-info-item-detail">Ballroom</p>
+                </div>
+                <div class="proposal-detail__overview-info-item">
+                    <p class="proposal-detail__overview-info-item-title">Max Capacity:</p>
+                    <p class="proposal-detail__overview-info-item-detail">1,500</p>
+                </div>
+                <div class="proposal-detail__overview-info-item">
+                    <p class="proposal-detail__overview-info-item-title">Theater Capacity:</p>
+                    <p class="proposal-detail__overview-info-item-detail">1700</p>
+                </div>
+                <div class="proposal-detail__overview-info-item">
+                    <p class="proposal-detail__overview-info-item-title">Venue Size:</p>
+                    <p class="proposal-detail__overview-info-item-detail">1,880 meters</p>
+                </div>
+                <div class="proposal-detail__overview-info-item">
+                    <p class="proposal-detail__overview-info-item-title">Dimensions:</p>
+                    <p class="proposal-detail__overview-info-item-detail">55*33</p>
+                </div>
+                <p class="proposal-detail__overview-info-description">
+                    One&Only Royal Mirage in Dubai is the epitome of Arabian elegance and luxury, offering an
+                    unparalleled setting for <br> events that require a touch of grandeur
+                </p>
+
+                <div class="accordion__content">
+                    <div class="proposal-detail__overview-info-item">
+                        <p class="proposal-detail__overview-info-item-title">Some extra content</p>
+                        <p class="proposal-detail__overview-info-item-detail">Sample content</p>
+                    </div>
+                </div>
+
+                <button class="proposal-detail__overview-expand accordion__header">
+                    <span class="accordion-expanded">Show less</span>
+                    <span class="accordion-not-expanded">Show more</span>
+                </button>
+            </div>
+
+            <hr>
+        </section>
+
+        <section class="proposal__container proposal-detail__overview">
+            <h2 class="proposal-detail__overview-title">Location</h2>
+
+            <div class="proposal-detail__map-wrapper">
+                <div id="map" class="proposal-detail__map"></div>
+                <a href="https://www.google.com/maps?q=25.079890355516895,55.14020919799805"
+                    class="proposal-detail__map-open-btn" target="_blank">Open on Google Maps</a>
+            </div>
+
+            <p class="proposal-detail__overview-info-description">
+                King Salman Bin Abdulaziz Al Saud St - Dubai Marina - Dubai - United Arab Emirates
+            </p>
+
+            <hr>
         </section>
 
         <section class="proposal__advisor">
@@ -272,7 +271,9 @@
         </footer>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="/scripts/app.js"></script>
+    <script src="/scripts/map.js"></script>
     <script>
         // Timer functionality
         function updateTimer(wrapper) {
@@ -301,6 +302,30 @@
         accordions.forEach(accordion => {
             new Accordion({ wrapper: accordion });
         });
+
+
+        const fraction = document.querySelector('.proposal__head-swiper .swiper-pagination-fraction');
+        new Swiper(".proposal__head-swiper .swiper", {
+            loop: true,
+            navigation: {
+                nextEl: ".proposal__head-swiper .swiper-button-next",
+                prevEl: ".proposal__head-swiper .swiper-button-prev",
+            },
+            pagination: {
+                el: ".proposal__head-swiper .swiper-pagination",
+                clickable: true,
+            },
+            on: {
+                slideChange() {
+                    fraction.textContent = `${this.realIndex + 1} / ${this.slides.length}`;
+                }
+            }
+        });
+
+        createMap(document.querySelector('#map'), {
+            lat: '25.079890355516895',
+            lng: '55.14020919799805'
+        })
     </script>
 </body>
 

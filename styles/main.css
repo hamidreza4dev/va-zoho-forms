@@ -750,6 +750,18 @@ body {
   transition: height 0.3s ease;
 }
 
+.accordion-expanded {
+  display: none;
+}
+
+.accordion__item--active .accordion-expanded {
+  display: block;
+}
+
+.accordion__item--active .accordion-not-expanded {
+  display: none;
+}
+
 .layout__nav {
   position: sticky;
   top: 0px;
