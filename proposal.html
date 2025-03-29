@@ -15,10 +15,99 @@
 
 <body>
     <div id="snackbar"></div>
+
+    <div class="dialog proposal__pricing-modal" id="proposalPricingModal">
+        <div class="dialog__container">
+            <div class="dialog__x"></div>
+            <div class="dialog__bilbilak"></div>
+            <div class="dialog__content">
+                <div class="proposal__pricing-header">
+                    <div class="proposal__pricing-subheading">Pricing</div>
+                    <div class="proposal__pricing-heading">Venue Advisory and Booking Services</div>
+                    <div class="proposal__pricing-description">
+                        Venue Wise offers two service packages that provide full support to bookers, from venue
+                        selection to securing bookings, ensuring a smooth decision-making process for various clients,
+                        from small agencies to large corporations.
+                    </div>
+                </div>
+
+                <div class="proposal__pricing-packages">
+                    <div class="proposal__pricing-package">
+                        <div class="proposal__pricing-package-header">
+                            <div class="proposal__pricing-package-title">
+                                <div class="proposal__pricing-package-subtitle">Free</div>
+                                <div class="proposal__pricing-package-heading">Up to 3 Inquiries</div>
+                            </div>
+                            <div class="proposal__pricing-package-price">
+                                <div class="proposal__pricing-package-price-text">Fee:</div>
+                                <div class="proposal__pricing-package-price-value">
+                                    <span class="proposal__pricing-package-price-value-highlight">2.5%</span>
+                                    on find booking value
+                                </div>
+                            </div>
+
+                            <button class="proposal__button-medium--current-plan">Current Plan</button>
+                        </div>
+                    </div>
+                    <div class="proposal__pricing-package">
+                        <div class="proposal__pricing-package-header">
+                            <div class="proposal__pricing-package-title">
+                                <div class="proposal__pricing-package-subtitle">Paid</div>
+                                <div class="proposal__pricing-package-heading">Any Inquiry Onwards</div>
+                            </div>
+                            <div class="proposal__pricing-package-price">
+                                <div class="proposal__pricing-package-price-text">Fee:</div>
+                                <div class="proposal__pricing-package-price-value">
+                                    <span class="proposal__pricing-package-price-value-highlight">2.5%</span>
+                                    on find booking value
+                                </div>
+                            </div>
+
+                            <p class="proposal__pricing-package-features-heading">
+                                Includes all services from the basic advisory package
+                            </p>
+                            <ul class="proposal__pricing-package-features">
+                                <li class="proposal__pricing-package-feature">
+                                    <b>Dedicated expert booking advisor</b><br>
+                                    A single-point-of-contact advisor who coordinates everything end-to-end<br>
+                                    Expert advisor will assist with the venue selection and contract negotiation,<br>
+                                    providing guidance throughout the process.<br>
+                                    <b>Venue selection</b>: Help in choosing venues that align with event goals<br>
+                                    <b>Negotiation assistance</b>: Guidance to secure the best terms<br>
+                                    <b>Market Insights</b>: Detailed market knowledge to aid decision-making<br>
+                                </li>
+                                <li class="proposal__pricing-package-feature">
+                                    <b>Vendor coordination support</b><br>
+                                    Assistance in connecting with additional service providers like:<br>
+                                    AV equipment rentals.<br>
+                                    Catering services (menu recommendations).<br>
+                                    Event decorators<br>
+                                    Event Organizers
+                                </li>
+                                <li class="proposal__pricing-package-feature">
+                                    <b>Transportation and accommodation suggestions</b><br>
+                                    Recommending transportation services (bus/car rentals) for attendees<br>
+                                    Partnership rates with nearby hotels for guest accommodation<br>
+                                </li>
+                                <li class="proposal__pricing-package-feature">
+                                    <b>Event agenda templates</b><br>
+                                    Provide ready-to-use templates for corporate event agendas (schedule, breakouts,
+                                    etc.)
+                                </li>
+                            </ul>
+
+                            <button class="proposal__button-medium--subscribe">Subscribe now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div>
         <section class="proposal__header">
             <nav class="proposal__main-container proposal__nav">
-                <div>
+                <div class="proposal__logo">
                     <img src="/assets/vectors/logo.svg" alt="" />
                 </div>
             </nav>
@@ -27,23 +116,54 @@
         <div class="proposal__sections">
             <div class="proposal__main-container">
                 <div class="proposal__sections-inner">
-                    <a href="#" class="proposal__section proposal__section-active">Cover</a>
-                    <a href="#" class="proposal__section">Package inclusions</a>
-                    <a href="#" class="proposal__section">Overview</a>
-                    <a href="#" class="proposal__section">Location</a>
-                    <a href="#" class="proposal__section">Video</a>
-                    <a href="#" class="proposal__section">Virtual tour</a>
-                    <a href="#" class="proposal__section">Attached files from venue</a>
-                    <a href="#" class="proposal__section">Guest room</a>
-                    <a href="#" class="proposal__section">Facilities</a>
-                    <a href="#" class="proposal__section">Your venue advisor</a>
+                    <button class="proposal__section proposal__section-active"
+                        data-section=".proposal__head-swiper">Cover</button>
+                    <button class="proposal__section" data-section="#package-inclusions">Package inclusions</button>
+                    <button class="proposal__section" data-section="#overview">Overview</button>
+                    <button class="proposal__section" data-section="#location">Location</button>
+                    <button class="proposal__section" data-section="#assets">Assets</button>
+                    <button class="proposal__section" data-section="#additional-materials">Additional materials</button>
+                    <button class="proposal__section" data-section="#facilities">Facilities</button>
+                    <button class="proposal__section" data-section="#advisor">Your venue advisor</button>
                 </div>
             </div>
         </div>
 
         <div class="proposal__head-swiper">
-            <div class="swiper">
+            <div class="swiper proposal__head-swiper-images">
                 <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./assets/images/venue/1/cover.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./assets/images/venue/2/cover.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./assets/images/venue/4/cover.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./assets/images/venue/1/cover.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./assets/images/venue/2/cover.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./assets/images/venue/4/cover.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper proposal__head-swiper-thumbnails proposal__container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./assets/images/venue/1/cover.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./assets/images/venue/2/cover.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./assets/images/venue/4/cover.jpg" alt="">
+                    </div>
                     <div class="swiper-slide">
                         <img src="./assets/images/venue/1/cover.jpg" alt="">
                     </div>
@@ -67,6 +187,51 @@
             </div>
         </div>
 
+        <div class="proposal-detail__header">
+            <div class="proposal__container proposal-detail__header-inner">
+                <div class="proposal-detail__header-info">
+                    <div class="proposal-detail__header-location">
+                        <p>Marina, Dubai, Am <span>|</span> <b>Hotel</b> .</p>
+                        <div class="proposal-detail__header-rating">
+                            <img src="./assets/vectors/rating.svg" alt="">
+                            <p>4.8</p>
+                        </div>
+                    </div>
+                    <h1 class="proposal-detail__header-title">Royal Ballroom at One&Only Royal Mirage - Dubai</h1>
+                </div>
+
+                <!-- unavailable status -->
+                <!-- <div class="proposal-detail__header-status proposal-detail__header-status-unavailable">
+                    <h6 class="proposal-detail__header-availability">Expired</h6>
+                </div> -->
+
+                <div class="proposal-detail__header-status proposal-detail__header-status-available">
+                    <h6 class="proposal-detail__header-availability">Available</h6>
+
+                    <div class="proposal__venue__expires">
+                        <div class="proposal__venue__timer">
+                            <div class="proposal__venue__timer-label">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M7.99375 12.0016C9.10486 12.0016 10.0493 11.6127 10.8271 10.8349C11.6049 10.0571 11.9937 9.11267 11.9937 8.00156C11.9937 6.89045 11.6049 5.94601 10.8271 5.16823C10.0493 4.39045 9.10486 4.00156 7.99375 4.00156V8.00156L5.16042 10.8349C5.52708 11.1905 5.95208 11.4738 6.43542 11.6849C6.91875 11.896 7.43819 12.0016 7.99375 12.0016ZM7.99842 14.4016C7.11753 14.4016 6.28819 14.2349 5.51042 13.9016C4.73264 13.5682 4.05208 13.1099 3.46875 12.5266C2.88542 11.9432 2.42708 11.2629 2.09375 10.4856C1.76042 9.70823 1.59375 8.87767 1.59375 7.9939C1.59375 7.11012 1.76042 6.28212 2.09375 5.5099C2.42708 4.73767 2.88542 4.0599 3.46875 3.47656C4.05208 2.89323 4.73242 2.4349 5.50975 2.10156C6.28708 1.76823 7.11764 1.60156 8.00142 1.60156C8.88519 1.60156 9.71319 1.76823 10.4854 2.10156C11.2576 2.4349 11.9354 2.89323 12.5187 3.47656C13.1021 4.0599 13.5604 4.7389 13.8937 5.51356C14.2271 6.28834 14.3937 7.11612 14.3937 7.9969C14.3937 8.87778 14.2271 9.70712 13.8937 10.4849C13.5604 11.2627 13.1021 11.9432 12.5187 12.5266C11.9354 13.1099 11.2564 13.5682 10.4817 13.9016C9.70697 14.2349 8.87919 14.4016 7.99842 14.4016ZM7.99375 13.2016C9.43819 13.2016 10.666 12.696 11.6771 11.6849C12.6882 10.6738 13.1937 9.44601 13.1937 8.00156C13.1937 6.55712 12.6882 5.32934 11.6771 4.31823C10.666 3.30712 9.43819 2.80156 7.99375 2.80156C6.54931 2.80156 5.32153 3.30712 4.31042 4.31823C3.29931 5.32934 2.79375 6.55712 2.79375 8.00156C2.79375 9.44601 3.29931 10.6738 4.31042 11.6849C5.32153 12.696 6.54931 13.2016 7.99375 13.2016Z"
+                                        fill="black" />
+                                </svg>
+                                Expires in
+                            </div>
+                            <div class="proposal__venue__timer-display">
+                                <span class="proposal__venue__timer-digit" id="timer-days">05</span>
+                                <span>:</span>
+                                <span class="proposal__venue__timer-digit" id="timer-hours">45</span>
+                                <span>:</span>
+                                <span class="proposal__venue__timer-digit" id="timer-minutes">05</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <section class="proposal__container accordion proposal-detail__overview">
             <div class="proposal-detail__user">
                 <div class="proposal-detail__user-avatar">
@@ -85,7 +250,7 @@
             </h1>
         </section>
 
-        <section class="proposal__container proposal-detail__overview">
+        <section class="proposal__container proposal-detail__overview" id="package-inclusions">
             <h2 class="proposal-detail__overview-title">Package inclusions</h2>
 
             <div class="proposal-detail__overview-info accordion__item">
@@ -123,7 +288,7 @@
             <hr>
         </section>
 
-        <section class="proposal__container proposal-detail__overview">
+        <section class="proposal__container proposal-detail__overview" id="overview">
             <h2 class="proposal-detail__overview-title">Overview</h2>
 
             <div class="proposal-detail__overview-info accordion__item">
@@ -168,7 +333,7 @@
             <hr>
         </section>
 
-        <section class="proposal__container proposal-detail__overview">
+        <section class="proposal__container proposal-detail__overview" id="location">
             <h2 class="proposal-detail__overview-title">Location</h2>
 
             <div class="proposal-detail__map-wrapper">
@@ -181,12 +346,167 @@
                 King Salman Bin Abdulaziz Al Saud St - Dubai Marina - Dubai - United Arab Emirates
             </p>
 
+            <hr class="desktop-only">
+        </section>
+
+        <section class="proposal__container proposal-detail__overview proposal-detail__overview-assets" id="assets">
+            <div class="tabs" id="assetsTabs">
+                <nav class="tabs__nav">
+                    <button class="tabs__nav-item" data-tab-target="video">Video</button>
+                    <button class="tabs__nav-item" data-tab-target="virtual-tour">Virtual tour</button>
+                    <button class="tabs__nav-item" data-tab-target="guest-room">Guest room</button>
+                </nav>
+                <div class="tabs__content">
+                    <div id="video" class="tabs__panel">
+                        <h2 class="proposal-detail__overview-title">Video</h2>
+                        <div class="swiper assets-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <iframe src="https://www.youtube.com/embed/dcBlJsn_rhE?enablejsapi=1" title=""
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="proposal-detail__overview-nav-wrapper">
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                    </div>
+                    <div id="virtual-tour" class="tabs__panel">
+                        <h2 class="proposal-detail__overview-title">Virtual Tour</h2>
+                        <div class="swiper assets-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="./assets/images/virtual-tour-placeholder.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./assets/images/virtual-tour-placeholder.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./assets/images/virtual-tour-placeholder.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./assets/images/virtual-tour-placeholder.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="proposal-detail__overview-nav-wrapper">
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                    </div>
+                    <div id="guest-room" class="tabs__panel">
+                        <h2 class="proposal-detail__overview-title">Guest room</h2>
+                        <div class="swiper assets-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="./assets/images/venue/1/cover.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./assets/images/venue/1/cover.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./assets/images/venue/1/cover.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./assets/images/venue/1/cover.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper proposal-detail__overview-thumbnails">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="./assets/images/venue/1/cover.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./assets/images/venue/2/cover.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./assets/images/venue/4/cover.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./assets/images/venue/1/cover.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="proposal-detail__overview-nav-wrapper">
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="tiny desktop-only">
+        </section>
+
+        <section class="proposal__container proposal-detail__overview" id="additional-materials">
+            <h2 class="proposal-detail__overview-title">Attached files from venue</h2>
+
+            <div class="proposal-detail__files">
+                <div class="proposal-detail__file">
+                    <img src="./assets/vectors/additional-materials/fact.svg" alt="">
+                    <p>Fact sheet </p>
+                </div>
+                <div class="proposal-detail__file">
+                    <img src="./assets/vectors/additional-materials/image.svg" alt="">
+                    <p>Menu</p>
+                </div>
+                <div class="proposal-detail__file">
+                    <img src="./assets/vectors/additional-materials/pdf.svg" alt="">
+                    <p>Capacity chart</p>
+                </div>
+                <div class="proposal-detail__file">
+                    <img src="./assets/vectors/additional-materials/floor-plan.svg" alt="">
+                    <p>Al Badir floor plan</p>
+                </div>
+            </div>
+
             <hr>
         </section>
 
-        <section class="proposal__advisor">
+        <section class="proposal__container proposal-detail__overview" id="facilities">
+            <h2 class="proposal-detail__overview-title">Facilities</h2>
+
+            <div class="proposal-detail__facilities">
+                <li class="proposal-detail__facilities-item">
+                    <img src="./assets/vectors/facilities/outdoor-swimming-pool.svg" alt="">
+                    Outdoor swimming pool
+                </li>
+                <li class="proposal-detail__facilities-item">
+                    <img src="./assets/vectors/facilities/facilities-for-disabled-guests.svg" alt="">
+                    Facilities for disabled guests
+                </li>
+                <li class="proposal-detail__facilities-item">
+                    <img src="./assets/vectors/facilities/fitness-centre.svg" alt="">
+                    Fitness centre
+                </li>
+                <li class="proposal-detail__facilities-item">
+                    <img src="./assets/vectors/facilities/spa-and-wellness-centre.svg" alt="">
+                    Spa and wellness centre
+                </li>
+                <li class="proposal-detail__facilities-item">
+                    <img src="./assets/vectors/facilities/airport-shuttle.svg" alt="">
+                    Airport shuttle
+                </li>
+                <li class="proposal-detail__facilities-item">
+                    <img src="./assets/vectors/facilities/restaurant.svg" alt="">
+                    Restaurant
+                </li>
+            </div>
+
+            <hr class="desktop-only">
+        </section>
+
+        <section class="proposal__advisor" id="advisor">
             <div class="proposal__container">
-                <h2 class="proposal__advisor-title">Your Venue Advisor</h2>
+                <h2 class="proposal__advisor-title">Your venue advisor</h2>
                 <div class="proposal__advisor-card">
                     <div class="proposal__advisor-info">
                         <img src="/assets/images/avatar/venue-adviser.png" alt="Kate Asumbra"
@@ -269,11 +589,28 @@
                 </div>
             </div>
         </footer>
+
+        <section class="proposal__sticky-actions">
+            <button class="proposal__sticky-actions-btn proposal__sticky-actions-btn--download">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12 16L7 11L8.4 9.55L11 12.15V4H13V12.15L15.6 9.55L17 11L12 16ZM6 20C5.45 20 4.97917 19.8042 4.5875 19.4125C4.19583 19.0208 4 18.55 4 18V15H6V18H18V15H20V18C20 18.55 19.8042 19.0208 19.4125 19.4125C19.0208 19.8042 18.55 20 18 20H6Z"
+                        fill="#C8D200" />
+                </svg>
+            </button>
+            <button class="proposal__sticky-actions-btn proposal__sticky-actions-btn--reject">
+                Reject
+            </button>
+            <button class="proposal__sticky-actions-btn proposal__sticky-actions-btn--accept">
+                Accept
+            </button>
+        </section>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="/scripts/app.js"></script>
     <script src="/scripts/map.js"></script>
+    <script src="/scripts/sections.js"></script>
     <script>
         // Timer functionality
         function updateTimer(wrapper) {
@@ -291,7 +628,7 @@
             wrapper.querySelector('#timer-minutes').textContent = String(minutes).padStart(2, '0');
         }
 
-        document.querySelectorAll('.proposal__venue-card #expiresInContainer').forEach(element => {
+        document.querySelectorAll('#expiresInContainer').forEach(element => {
             // Update timer every second
             setInterval(() => updateTimer(element), 1000);
             // Initial update
@@ -303,9 +640,14 @@
             new Accordion({ wrapper: accordion });
         });
 
-
         const fraction = document.querySelector('.proposal__head-swiper .swiper-pagination-fraction');
-        new Swiper(".proposal__head-swiper .swiper", {
+        const thumbnails = new Swiper(".proposal__head-swiper .proposal__head-swiper-thumbnails", {
+            watchSlidesProgress: true,
+            spaceBetween: 4,
+            slidesPerView: 3.3,
+        });
+
+        new Swiper(".proposal__head-swiper .proposal__head-swiper-images", {
             loop: true,
             navigation: {
                 nextEl: ".proposal__head-swiper .swiper-button-next",
@@ -315,9 +657,21 @@
                 el: ".proposal__head-swiper .swiper-pagination",
                 clickable: true,
             },
+            thumbs: {
+                swiper: thumbnails,
+            },
             on: {
                 slideChange() {
                     fraction.textContent = `${this.realIndex + 1} / ${this.slides.length}`;
+                    if (this.allowSlidePrev) {
+                        if (this.previousRealIndex > this.realIndex) {
+                            thumbnails.slideTo(this.realIndex - 1);
+                        } else {
+                            thumbnails.slideTo(this.realIndex);
+                        }
+                    } else {
+                        thumbnails.slideTo(this.realIndex);
+                    }
                 }
             }
         });
@@ -325,7 +679,69 @@
         createMap(document.querySelector('#map'), {
             lat: '25.079890355516895',
             lng: '55.14020919799805'
-        })
+        });
+
+        const tabsElement = document.getElementById('assetsTabs');
+        new Tabs({ wrapper: tabsElement });
+
+
+        document.querySelectorAll('.assets-swiper').forEach(element => {
+            const canHaveAutoplay = element.querySelectorAll('iframe, video').length == 0;
+
+            const pause = () => element.querySelectorAll('iframe, video').forEach(item => pauseVideo(item));
+
+            tabsElement.addEventListener('tabs:beforeHide', (e) => {
+                if (e.detail.panel.isEqualNode(element.parentElement)) {
+                    pause()
+                }
+            });
+
+            const thumbnailsElement = element.parentElement.querySelector('.proposal-detail__overview-thumbnails');
+            const thumbnails = thumbnailsElement && new Swiper(thumbnailsElement, {
+                watchSlidesProgress: true,
+                spaceBetween: 4,
+                slidesPerView: 3.3,
+            });
+
+            new Swiper(element, {
+                loop: true,
+                autoplay: canHaveAutoplay ? {
+                    delay: 3000,
+                    disableOnInteraction: true,
+                } : false,
+                navigation: {
+                    nextEl: element.parentElement.querySelector('.swiper-button-next'),
+                    prevEl: element.parentElement.querySelector('.swiper-button-prev')
+                },
+                thumbs: thumbnails ? {
+                    swiper: thumbnails,
+                } : undefined,
+                on: {
+                    slideChange() {
+                        pause();
+                        if (thumbnailsElement) {
+                            if (this.allowSlidePrev) {
+                                if (this.previousRealIndex > this.realIndex) {
+                                    thumbnails.slideTo(this.realIndex - 1);
+                                } else {
+                                    thumbnails.slideTo(this.realIndex);
+                                }
+                            } else {
+                                thumbnails.slideTo(this.realIndex);
+                            }
+                        }
+                    }
+                }
+            });
+        });
+
+        /**
+         * use `data-trigger-dialog="proposalPricingModal"` to open dialog on button click
+         * Also you can use `dialog.open()` or `dialog.close()` if needed
+         */
+        const dialog = new Dialog({
+            wrapper: document.querySelector('#proposalPricingModal'),
+        });
     </script>
 </body>
 
