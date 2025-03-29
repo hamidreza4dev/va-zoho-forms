@@ -447,8 +447,16 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0.375rem 1rem;
-  background-color: #b2ff8c;
   margin-top: auto;
+  height: 2.25rem;
+}
+
+.proposal__venue-timer-available {
+  background-color: #b2ff8c;
+}
+
+.proposal__venue-timer-unavailable {
+  background-color: #e5cb00;
 }
 
 @media (max-width: 768px) {
